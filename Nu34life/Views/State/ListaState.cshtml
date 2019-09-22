@@ -1,0 +1,12 @@
+﻿
+@model IEnumerable<Nu34life.Models.State>
+
+<select class="form-control" id="Id" name="Id">
+    @foreach (var item in Model)
+    {
+        <option value="@item.Id">@item.Generated_day</option>
+    }
+</select>
+
+
+

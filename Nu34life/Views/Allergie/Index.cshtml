@@ -1,0 +1,53 @@
+﻿
+@model IEnumerable<Nu34life.Models.Allergy>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Paciente</h2>
+<p>
+    @Html.ActionLink("Crear Paciente", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Last Name
+        </th>
+        <th>
+            Birthday
+        </th>
+
+
+
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ingredient_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Patient_Id)
+            </td>
+         
+
+
+     
+        </tr>
+    }
+</table>
+@section scripts{
+    <script>
+        $(".nElimina").click(function (event) {
+            if (confirm('Estas seguro de eliminar?') == false) {
+                event.preventDefault();
+            }
+        });</script>
+}

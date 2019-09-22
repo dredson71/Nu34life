@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nu34life", "Nu34life\Nu34life.csproj", "{56AE5F08-1FEC-4E4D-8C8A-9C47E81E6703}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nu34life.Tests", "Nu34life.Tests\Nu34life.Tests.csproj", "{31AB0362-5DA7-42A4-8B46-5D8DA4A5AA05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56AE5F08-1FEC-4E4D-8C8A-9C47E81E6703}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56AE5F08-1FEC-4E4D-8C8A-9C47E81E6703}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56AE5F08-1FEC-4E4D-8C8A-9C47E81E6703}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56AE5F08-1FEC-4E4D-8C8A-9C47E81E6703}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31AB0362-5DA7-42A4-8B46-5D8DA4A5AA05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31AB0362-5DA7-42A4-8B46-5D8DA4A5AA05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31AB0362-5DA7-42A4-8B46-5D8DA4A5AA05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31AB0362-5DA7-42A4-8B46-5D8DA4A5AA05}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C87F67C4-F929-44B4-84F5-AC08B9C1C903}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Nu34life.Models.Ingredient>
+
+@{
+    ViewBag.Title = "Lista de Ingredientes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Crear Ingrediente", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Nombre
+        </th>
+        <th>
+            Descripción
+        </th>
+        <th>
+            Carbohidratos
+        </th>
+        <th>
+            Grasas
+        </th>
+        <th>
+            Proteinas
+        </th>
+        <th>
+            Colesterol
+        </th>
+        <th>
+            Sodio
+        </th>
+        <th>
+            Potasio
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Carbohydrates)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Protein)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cholesterol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sodium)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Potasium)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Detalles", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.Id }, new { @class = "nElimina"})
+            </td>
+        </tr>
+    }
+
+</table>
+
+@section scripts{
+
+    <script>
+        $(".nElimina").click(function (event) {
+            if (confirm('Estas seguro de eliminar?') == false){
+                event.preventDefault();
+            }
+        });
+
+    </script>
+
+}

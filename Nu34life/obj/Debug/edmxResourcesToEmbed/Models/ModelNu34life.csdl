@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Nu34lifeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Allergy">
+    <Key>
+      <PropertyRef Name="Patient_Id" />
+      <PropertyRef Name="Ingredient_Id" />
+    </Key>
+    <Property Name="Patient_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ingredient_Id" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Ingredient" Relationship="Self.Table_7_Ingredient" FromRole="Allergy" ToRole="Ingredient" />
+    <NavigationProperty Name="Patient" Relationship="Self.Table_7_Patient" FromRole="Allergy" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="Drug">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="States" Relationship="Self.Drug_State" FromRole="Drug" ToRole="State" />
+  </EntityType>
+  <EntityType Name="Ingredient">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Carbohydrates" Type="Int32" Nullable="false" />
+    <Property Name="Fat" Type="Int32" Nullable="false" />
+    <Property Name="Protein" Type="Int32" Nullable="false" />
+    <Property Name="Cholesterol" Type="Int32" Nullable="false" />
+    <Property Name="Sodium" Type="Int32" Nullable="false" />
+    <Property Name="Potasium" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Allergies" Relationship="Self.Table_7_Ingredient" FromRole="Ingredient" ToRole="Allergy" />
+    <NavigationProperty Name="Recipe_Details" Relationship="Self.Recipe_Details_Ingredient" FromRole="Ingredient" ToRole="Recipe_Details" />
+  </EntityType>
+  <EntityType Name="Instruction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Recipe_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Recipe" Relationship="Self.Instruction_Recipe" FromRole="Instruction" ToRole="Recipe" />
+  </EntityType>
+  <EntityType Name="Membership">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="360" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Precision="4" Scale="2" Nullable="false" />
+    <Property Name="Duration" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Suscriptions" Relationship="Self.Suscriptions_Membership" FromRole="Membership" ToRole="Suscriptions" />
+  </EntityType>
+  <EntityType Name="Nutritionist">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Validate" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Patients" Relationship="Self.Patient_Nutritionist" FromRole="Nutritionist" ToRole="Patient" />
+    <NavigationProperty Name="States" Relationship="Self.State_Nutritionist" FromRole="Nutritionist" ToRole="State" />
+    <NavigationProperty Name="Suscriptions" Relationship="Self.Suscriptions_Nutritionist" FromRole="Nutritionist" ToRole="Suscriptions" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Last_name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Nutritionist_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Allergies" Relationship="Self.Table_7_Patient" FromRole="Patient" ToRole="Allergy" />
+    <NavigationProperty Name="Nutritionist" Relationship="Self.Patient_Nutritionist" FromRole="Patient" ToRole="Nutritionist" />
+    <NavigationProperty Name="States" Relationship="Self.State_Patient" FromRole="Patient" ToRole="State" />
+  </EntityType>
+  <EntityType Name="Plan">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="Int32" Nullable="false" />
+    <Property Name="State_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="State" Relationship="Self.Plan_State" FromRole="Plan" ToRole="State" />
+    <NavigationProperty Name="Plans_Recipes" Relationship="Self.Plans_Recipes_Plan" FromRole="Plan" ToRole="Plans_Recipes" />
+  </EntityType>
+  <EntityType Name="Plans_Recipes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Turn" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Recipe_Id" Type="Int32" Nullable="false" />
+    <Property Name="Plan_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Plan" Relationship="Self.Plans_Recipes_Plan" FromRole="Plans_Recipes" ToRole="Plan" />
+    <NavigationProperty Name="Recipe" Relationship="Self.Plans_Recipes_Recipe" FromRole="Plans_Recipes" ToRole="Recipe" />
+  </EntityType>
+  <EntityType Name="Recipe">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Instructions" Relationship="Self.Instruction_Recipe" FromRole="Recipe" ToRole="Instruction" />
+    <NavigationProperty Name="Plans_Recipes" Relationship="Self.Plans_Recipes_Recipe" FromRole="Recipe" ToRole="Plans_Recipes" />
+    <NavigationProperty Name="Recipe_Details" Relationship="Self.Recipe_Details_Recipe" FromRole="Recipe" ToRole="Recipe_Details" />
+  </EntityType>
+  <EntityType Name="Recipe_Details">
+    <Key>
+      <PropertyRef Name="Recipe_Id" />
+      <PropertyRef Name="Ingredient_Id" />
+    </Key>
+    <Property Name="Recipe_Id" Type="Int32" Nullable="false" />
+    <Property Name="Ingredient_Id" Type="Int32" Nullable="false" />
+    <Property Name="Grams" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Ingredient" Relationship="Self.Recipe_Details_Ingredient" FromRole="Recipe_Details" ToRole="Ingredient" />
+    <NavigationProperty Name="Recipe" Relationship="Self.Recipe_Details_Recipe" FromRole="Recipe_Details" ToRole="Recipe" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="360" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Height" Type="Int32" Nullable="false" />
+    <Property Name="Weighr" Type="Int32" Nullable="false" />
+    <Property Name="Glucose" Type="Int32" Nullable="false" />
+    <Property Name="Affiliate" Type="Boolean" Nullable="false" />
+    <Property Name="Generated_day" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Expiration" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Nutritionist_Id" Type="Int32" Nullable="false" />
+    <Property Name="Patient_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Nutritionist" Relationship="Self.State_Nutritionist" FromRole="State" ToRole="Nutritionist" />
+    <NavigationProperty Name="Patient" Relationship="Self.State_Patient" FromRole="State" ToRole="Patient" />
+    <NavigationProperty Name="Plans" Relationship="Self.Plan_State" FromRole="State" ToRole="Plan" />
+    <NavigationProperty Name="Drugs" Relationship="Self.Drug_State" FromRole="State" ToRole="Drug" />
+  </EntityType>
+  <EntityType Name="Suscription">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Payday" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Ending_date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Nutritionist_Id" Type="Int32" Nullable="false" />
+    <Property Name="Membership_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Membership" Relationship="Self.Suscriptions_Membership" FromRole="Suscriptions" ToRole="Membership" />
+    <NavigationProperty Name="Nutritionist" Relationship="Self.Suscriptions_Nutritionist" FromRole="Suscriptions" ToRole="Nutritionist" />
+  </EntityType>
+  <Association Name="Table_7_Ingredient">
+    <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="1" />
+    <End Role="Allergy" Type="Self.Allergy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ingredient">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Allergy">
+        <PropertyRef Name="Ingredient_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Table_7_Patient">
+    <End Role="Patient" Type="Self.Patient" Multiplicity="1" />
+    <End Role="Allergy" Type="Self.Allergy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Allergy">
+        <PropertyRef Name="Patient_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Recipe_Details_Ingredient">
+    <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="1" />
+    <End Role="Recipe_Details" Type="Self.Recipe_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ingredient">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Recipe_Details">
+        <PropertyRef Name="Ingredient_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Instruction_Recipe">
+    <End Role="Recipe" Type="Self.Recipe" Multiplicity="1" />
+    <End Role="Instruction" Type="Self.Instruction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recipe">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Instruction">
+        <PropertyRef Name="Recipe_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Suscriptions_Membership">
+    <End Role="Membership" Type="Self.Membership" Multiplicity="1" />
+    <End Role="Suscriptions" Type="Self.Suscription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Membership">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Suscriptions">
+        <PropertyRef Name="Membership_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Patient_Nutritionist">
+    <End Role="Nutritionist" Type="Self.Nutritionist" Multiplicity="1" />
+    <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nutritionist">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="Nutritionist_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="State_Nutritionist">
+    <End Role="Nutritionist" Type="Self.Nutritionist" Multiplicity="1" />
+    <End Role="State" Type="Self.State" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nutritionist">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="State">
+        <PropertyRef Name="Nutritionist_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Suscriptions_Nutritionist">
+    <End Role="Nutritionist" Type="Self.Nutritionist" Multiplicity="1" />
+    <End Role="Suscriptions" Type="Self.Suscription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nutritionist">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Suscriptions">
+        <PropertyRef Name="Nutritionist_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="State_Patient">
+    <End Role="Patient" Type="Self.Patient" Multiplicity="1" />
+    <End Role="State" Type="Self.State" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="State">
+        <PropertyRef Name="Patient_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Plan_State">
+    <End Role="State" Type="Self.State" Multiplicity="1" />
+    <End Role="Plan" Type="Self.Plan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Plan">
+        <PropertyRef Name="State_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Plans_Recipes_Plan">
+    <End Role="Plan" Type="Self.Plan" Multiplicity="1" />
+    <End Role="Plans_Recipes" Type="Self.Plans_Recipes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plan">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Plans_Recipes">
+        <PropertyRef Name="Plan_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Plans_Recipes_Recipe">
+    <End Role="Recipe" Type="Self.Recipe" Multiplicity="1" />
+    <End Role="Plans_Recipes" Type="Self.Plans_Recipes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recipe">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Plans_Recipes">
+        <PropertyRef Name="Recipe_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Recipe_Details_Recipe">
+    <End Role="Recipe" Type="Self.Recipe" Multiplicity="1" />
+    <End Role="Recipe_Details" Type="Self.Recipe_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recipe">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Recipe_Details">
+        <PropertyRef Name="Recipe_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Drug_State">
+    <End Role="Drug" Type="Self.Drug" Multiplicity="*" />
+    <End Role="State" Type="Self.State" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="Nu34lifeEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Allergies" EntityType="Self.Allergy" />
+    <EntitySet Name="Drugs" EntityType="Self.Drug" />
+    <EntitySet Name="Ingredients" EntityType="Self.Ingredient" />
+    <EntitySet Name="Instructions" EntityType="Self.Instruction" />
+    <EntitySet Name="Memberships" EntityType="Self.Membership" />
+    <EntitySet Name="Nutritionists" EntityType="Self.Nutritionist" />
+    <EntitySet Name="Patients" EntityType="Self.Patient" />
+    <EntitySet Name="Plans" EntityType="Self.Plan" />
+    <EntitySet Name="Plans_Recipes" EntityType="Self.Plans_Recipes" />
+    <EntitySet Name="Recipes" EntityType="Self.Recipe" />
+    <EntitySet Name="Recipe_Details" EntityType="Self.Recipe_Details" />
+    <EntitySet Name="States" EntityType="Self.State" />
+    <EntitySet Name="Suscriptions" EntityType="Self.Suscription" />
+    <AssociationSet Name="Table_7_Ingredient" Association="Self.Table_7_Ingredient">
+      <End Role="Ingredient" EntitySet="Ingredients" />
+      <End Role="Allergy" EntitySet="Allergies" />
+    </AssociationSet>
+    <AssociationSet Name="Table_7_Patient" Association="Self.Table_7_Patient">
+      <End Role="Patient" EntitySet="Patients" />
+      <End Role="Allergy" EntitySet="Allergies" />
+    </AssociationSet>
+    <AssociationSet Name="Recipe_Details_Ingredient" Association="Self.Recipe_Details_Ingredient">
+      <End Role="Ingredient" EntitySet="Ingredients" />
+      <End Role="Recipe_Details" EntitySet="Recipe_Details" />
+    </AssociationSet>
+    <AssociationSet Name="Instruction_Recipe" Association="Self.Instruction_Recipe">
+      <End Role="Recipe" EntitySet="Recipes" />
+      <End Role="Instruction" EntitySet="Instructions" />
+    </AssociationSet>
+    <AssociationSet Name="Suscriptions_Membership" Association="Self.Suscriptions_Membership">
+      <End Role="Membership" EntitySet="Memberships" />
+      <End Role="Suscriptions" EntitySet="Suscriptions" />
+    </AssociationSet>
+    <AssociationSet Name="Patient_Nutritionist" Association="Self.Patient_Nutritionist">
+      <End Role="Nutritionist" EntitySet="Nutritionists" />
+      <End Role="Patient" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="State_Nutritionist" Association="Self.State_Nutritionist">
+      <End Role="Nutritionist" EntitySet="Nutritionists" />
+      <End Role="State" EntitySet="States" />
+    </AssociationSet>
+    <AssociationSet Name="Suscriptions_Nutritionist" Association="Self.Suscriptions_Nutritionist">
+      <End Role="Nutritionist" EntitySet="Nutritionists" />
+      <End Role="Suscriptions" EntitySet="Suscriptions" />
+    </AssociationSet>
+    <AssociationSet Name="State_Patient" Association="Self.State_Patient">
+      <End Role="Patient" EntitySet="Patients" />
+      <End Role="State" EntitySet="States" />
+    </AssociationSet>
+    <AssociationSet Name="Plan_State" Association="Self.Plan_State">
+      <End Role="State" EntitySet="States" />
+      <End Role="Plan" EntitySet="Plans" />
+    </AssociationSet>
+    <AssociationSet Name="Plans_Recipes_Plan" Association="Self.Plans_Recipes_Plan">
+      <End Role="Plan" EntitySet="Plans" />
+      <End Role="Plans_Recipes" EntitySet="Plans_Recipes" />
+    </AssociationSet>
+    <AssociationSet Name="Plans_Recipes_Recipe" Association="Self.Plans_Recipes_Recipe">
+      <End Role="Recipe" EntitySet="Recipes" />
+      <End Role="Plans_Recipes" EntitySet="Plans_Recipes" />
+    </AssociationSet>
+    <AssociationSet Name="Recipe_Details_Recipe" Association="Self.Recipe_Details_Recipe">
+      <End Role="Recipe" EntitySet="Recipes" />
+      <End Role="Recipe_Details" EntitySet="Recipe_Details" />
+    </AssociationSet>
+    <AssociationSet Name="Drug_State" Association="Self.Drug_State">
+      <End Role="Drug" EntitySet="Drugs" />
+      <End Role="State" EntitySet="States" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
