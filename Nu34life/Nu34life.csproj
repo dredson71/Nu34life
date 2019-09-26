@@ -207,6 +207,41 @@
       <DependentUpon>ModelNu34life.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\IAllergyRepository.cs" />
+    <Compile Include="Repository\IIngredientRepository.cs" />
+    <Compile Include="Repository\IInstructionRepository.cs" />
+    <Compile Include="Repository\Implementation\AllergyRepository.cs" />
+    <Compile Include="Repository\Implementation\IngredientRepository.cs" />
+    <Compile Include="Repository\Implementation\InstructionRepository.cs" />
+    <Compile Include="Repository\Implementation\NutritionistRepository.cs" />
+    <Compile Include="Repository\Implementation\PatientRepository.cs" />
+    <Compile Include="Repository\Implementation\PlanRepository.cs" />
+    <Compile Include="Repository\Implementation\RecipeRepository.cs" />
+    <Compile Include="Repository\Implementation\StateRepository.cs" />
+    <Compile Include="Repository\INutritionistRepository.cs" />
+    <Compile Include="Repository\IPatientRepository.cs" />
+    <Compile Include="Repository\IPlanRepository.cs" />
+    <Compile Include="Repository\IRecipeRepository.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\IStateRepository.cs" />
+    <Compile Include="Services\IAllergyService.cs" />
+    <Compile Include="Services\IDrugService.cs" />
+    <Compile Include="Services\IIngredientService.cs" />
+    <Compile Include="Services\IInstructionService.cs" />
+    <Compile Include="Services\Implementation\AllergyService.cs" />
+    <Compile Include="Services\Implementation\IngredientService.cs" />
+    <Compile Include="Services\Implementation\InstructionService.cs" />
+    <Compile Include="Services\Implementation\NutritionistService.cs" />
+    <Compile Include="Services\Implementation\PatientService.cs" />
+    <Compile Include="Services\Implementation\PlanService.cs" />
+    <Compile Include="Services\Implementation\RecipeService.cs" />
+    <Compile Include="Services\Implementation\StateService.cs" />
+    <Compile Include="Services\INutritionistService.cs" />
+    <Compile Include="Services\IPatientService.cs" />
+    <Compile Include="Services\IPlanService.cs" />
+    <Compile Include="Services\IRecipeService.cs" />
+    <Compile Include="Services\IService.cs" />
+    <Compile Include="Services\IStateService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />

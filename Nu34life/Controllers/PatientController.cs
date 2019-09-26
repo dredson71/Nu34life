@@ -4,20 +4,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Business;
+using Business.Implementation;
 
 namespace Nu34life.Controllers
 {
     public class PatientController : Controller
     {
+        IPatientService patientService = new PatientService();
         // GET: Recipe
         public ActionResult Index()
         {
             try
             {
-                using (var db = new Nu34lifeEntities())
-                {
-                    return View(db.Patients.ToList());
-                }
+                return View(patientService.Listar());
             }
             catch (Exception)
             {
