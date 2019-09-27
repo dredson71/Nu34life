@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using Business;
+using Business.Implementation;
 namespace Nu34life.Controllers
 {
     public class PlanController : Controller
@@ -14,6 +15,8 @@ namespace Nu34life.Controllers
         {
             ctx = new Nu34lifeEntities();
         }
+
+        IPlanService planService = new PlanService();
         // GET: Plan
         public ActionResult Index()
         {
@@ -24,20 +27,15 @@ namespace Nu34life.Controllers
             if (TempData["State"] != null)
             {
                 var st = (State)TempData["State"];
-
-                var plan = from p in ctx.Plans
-                             where p.State_Id == st.Id
-                             select p;
-
                 TempData.Keep("State");
 
 
 
-                return View(plan.ToList());
+                return View(planService.ListarByState(st));
             }
             else
             {
-                return View(ctx.Plans.ToList());
+                return View(planService.Listar());
             }
         }
 

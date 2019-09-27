@@ -31,6 +31,17 @@ namespace Business.Implementation
 
         public bool Insertar(Patient a)
         {
+            List<Patient> patient = patientRepository.Listar();
+            for (int i = 0; i < patient.Count(); i++)
+            {
+                if (patient[i].Email == a.Email)
+                {
+                    return false;
+                }
+
+
+            } 
+         
             return patientRepository.Insertar(a);
         }
         public bool Actualizar(Patient a)

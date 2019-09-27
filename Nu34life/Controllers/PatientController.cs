@@ -12,6 +12,7 @@ namespace Nu34life.Controllers
     public class PatientController : Controller
     {
         IPatientService patientService = new PatientService();
+        INutritionistService nutritionistService = new NutritionistService();
         // GET: Recipe
         public ActionResult Index()
         {
@@ -29,7 +30,7 @@ namespace Nu34life.Controllers
         public ActionResult Create()
         {
             var db = new Nu34lifeEntities();
-            ViewBag.nutritionist = db.Nutritionists.ToList();
+            ViewBag.nutritionist = nutritionistService.Listar();
             return View();
         }
 
@@ -43,13 +44,14 @@ namespace Nu34life.Controllers
 
             try
             {
-                using (var db = new Nu34lifeEntities())
-                {
-                    ViewBag.nutritionist = db.Nutritionists.ToList();
-                    db.Patients.Add(r);
-                    db.SaveChanges();
+                
+                    ViewBag.nutritionist = nutritionistService.Listar();
+                var result = patientService.Insertar(r);
+                if (result)
                     return RedirectToAction("Index");
-                }
+                else
+                    return RedirectToAction("Create");
+                
             }
             catch (Exception ex)
             {

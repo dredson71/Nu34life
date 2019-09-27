@@ -4,55 +4,42 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using Business;
+using Business.Implementation;
 namespace Nu34life.Controllers
 {
     public class StateController : Controller
     {
+        IStateService stateService = new StateService();
+
         Nu34lifeEntities ctx;
         public StateController()
         {
             ctx = new Nu34lifeEntities();
         }
-        // GET: State
-        /*  public ActionResult Index()
-          {
-              try
-              {
-                  using (var db = new Nu34lifeEntities())
-                  {
-                      return View(db.States.ToList());
-                  }
-              }
-              catch (Exception)
-              {
-                  throw;
-              }
 
-          }*/
+        [HttpPost]
+        public ActionResult Index(int id = 0)
+        {
+            var Data = TempData["Patient"] as Patient;
+
+
+            return RedirectToAction("Index");
+        }
+
         public ActionResult Index()
         {
-            using (var db = new Nu34lifeEntities())
-            {
-                PartialView(db.Patients.ToList());
-            }
+         
             if (TempData["Patient"] != null)
             {
                 var Cat = (Patient)TempData["Patient"];
-
-                var States = from p in ctx.States
-                               where p.Patient_Id == Cat.Id
-                               select p;
-
                 TempData.Keep("Patient");
 
-                
-
-                return View(States.ToList());
+                return View(stateService.ListByPatient(Cat));
             }
             else
             {
-                return View(ctx.States.ToList());
+                return View(stateService.Listar());
             }
         }
 
@@ -76,14 +63,6 @@ namespace Nu34life.Controllers
             }
         }
 
-        [HttpPost]
-        public ActionResult Index(int id = 0)
-        {
-            var Data = TempData["Patient"] as Patient;
-          
-
-            return RedirectToAction("Index");
-        }
 
         public ActionResult Create()
         {
@@ -104,9 +83,16 @@ namespace Nu34life.Controllers
                     var Cat = (Patient)TempData["Patient"];
                     n.setPatient_ID (Cat.Id);
                     n.setNutritionist_ID(1);
-                    db.States.Add(n);
-                    db.SaveChanges();
-                    return RedirectToAction("Index");
+
+                    var cond=stateService.Insertar(n);
+
+                    if (cond)
+                        return RedirectToAction("Index");
+
+                    else
+                    {
+                        return View();
+                    }
                 }
             }
             catch (Exception ex)

@@ -8,6 +8,7 @@ namespace Business
 {
     public interface IPlanService : IService<Plan>
     {
+        List<Plan> ListarByState(State s);
 
     }
 }

@@ -31,12 +31,33 @@ namespace Business.Implementation
 
         public bool Insertar(Plan a)
         {
+            if(a.State == null)
+            {
+                return false;
+            }
+            else
             return planRepository.Insertar(a);
         }
         public bool Actualizar(Plan a)
         {
             return planRepository.Actualizar(a);
         }
+
+        public List<Plan> ListarByState(State s)
+        {
+            List<Plan> plans = planRepository.Listar();
+            for (int i = 0; i < plans.Count(); i++)
+            {
+                if (plans[i].State.Id != s.Id)
+                {
+                    plans.RemoveAt(i);
+                    i -= 1;
+                }
+
+
+            }
+            return plans;
+        } 
 
     }
 }

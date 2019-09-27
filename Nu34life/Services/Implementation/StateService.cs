@@ -24,6 +24,21 @@ namespace Business.Implementation
             return stateRepository.Listar();
         }
 
+        public List<State> ListByPatient(Patient p)
+        {
+            List<State> states = stateRepository.Listar();
+            for (int i = 0; i < states.Count(); i++)
+            {
+                if (states[i].Patient.Id != p.Id) { 
+                    states.RemoveAt(i);
+                    i -= 1;
+            }
+                    
+
+            }
+            return states;
+        }
+
         public State ListarPorId(int? id)
         {
             return stateRepository.ListarPorId(id);
@@ -31,7 +46,10 @@ namespace Business.Implementation
 
         public bool Insertar(State a)
         {
-            return stateRepository.Insertar(a);
+            if (a.Description.Count() < 25 && a.Generated_day < a.Expiration)
+                return stateRepository.Insertar(a);
+            else return false;
+
         }
         public bool Actualizar(State a)
         {

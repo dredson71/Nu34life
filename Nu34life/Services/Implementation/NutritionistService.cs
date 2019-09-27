@@ -31,6 +31,17 @@ namespace Business.Implementation
 
         public bool Insertar(Nutritionist a)
         {
+            List<Nutritionist> nutritionists = nutritionistRepository.Listar();
+            for (int i = 0; i < nutritionists.Count(); i++)
+            {
+                if (nutritionists[i].Email == a.Email)
+                {
+                    return false;
+                }
+
+
+            }
+
             return nutritionistRepository.Insertar(a);
         }
         public bool Actualizar(Nutritionist a)

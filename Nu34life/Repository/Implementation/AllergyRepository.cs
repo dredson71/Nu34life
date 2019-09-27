@@ -33,7 +33,10 @@ namespace Data.Implementacion
 
         public bool Insertar(Allergy a)
         {
-            throw new NotImplementedException();
+            var db = new Nu34lifeEntities();
+            db.Allergies.Add(a);
+            db.SaveChanges();
+            return true;
         }
 
     }

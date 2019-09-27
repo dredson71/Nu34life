@@ -9,6 +9,7 @@ namespace Business
 {
     public interface IStateService : IService<State>
     {
+        List<State> ListByPatient(Patient P);
 
     }
 }

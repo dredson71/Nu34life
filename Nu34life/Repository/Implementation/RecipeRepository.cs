@@ -33,7 +33,10 @@ namespace Data.Implementacion
 
         public bool Insertar(Recipe a)
         {
-            throw new NotImplementedException();
+            var db = new Nu34lifeEntities();
+            db.Recipes.Add(a);
+            db.SaveChanges();
+            return true;
         }
 
     }
