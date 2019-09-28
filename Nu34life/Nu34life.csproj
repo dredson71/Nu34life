@@ -217,11 +217,13 @@
     <Compile Include="Repository\Implementation\PatientRepository.cs" />
     <Compile Include="Repository\Implementation\PlanRepository.cs" />
     <Compile Include="Repository\Implementation\RecipeRepository.cs" />
+    <Compile Include="Repository\Implementation\Recipes_DetailsRepository.cs" />
     <Compile Include="Repository\Implementation\StateRepository.cs" />
     <Compile Include="Repository\INutritionistRepository.cs" />
     <Compile Include="Repository\IPatientRepository.cs" />
     <Compile Include="Repository\IPlanRepository.cs" />
     <Compile Include="Repository\IRecipeRepository.cs" />
+    <Compile Include="Repository\IRecipes_DetailsRepository.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\IStateRepository.cs" />
     <Compile Include="Services\IAllergyService.cs" />
@@ -235,11 +237,13 @@
     <Compile Include="Services\Implementation\PatientService.cs" />
     <Compile Include="Services\Implementation\PlanService.cs" />
     <Compile Include="Services\Implementation\RecipeService.cs" />
+    <Compile Include="Services\Implementation\Recipe_DetailsService.cs" />
     <Compile Include="Services\Implementation\StateService.cs" />
     <Compile Include="Services\INutritionistService.cs" />
     <Compile Include="Services\IPatientService.cs" />
     <Compile Include="Services\IPlanService.cs" />
     <Compile Include="Services\IRecipeService.cs" />
+    <Compile Include="Services\IRecipe_DetailsService.cs" />
     <Compile Include="Services\IService.cs" />
     <Compile Include="Services\IStateService.cs" />
   </ItemGroup>

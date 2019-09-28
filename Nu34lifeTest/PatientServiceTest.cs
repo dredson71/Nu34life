@@ -32,12 +32,12 @@ namespace Nu34lifeTest
             {
                 Id = 12,
                 Name = "nutri1",
-                LastName="nutri1_Last",
+                LastName = "nutri1_Last",
                 Email = "nutri1@pedro.com",
                 Password = "4334",
-                Validate=true
+                Validate = true
             });
-          
+
 
 
         }
@@ -50,7 +50,7 @@ namespace Nu34lifeTest
 
             var servicio = new PatientService();
             servicio.setPatient(patientRepository.Object);
-           
+
             var paciente = new Patient() {
                 Id = 10,
                 Name = "Diego",
@@ -91,7 +91,7 @@ namespace Nu34lifeTest
             Mock<IPlanRepository> planRepository = new Mock<IPlanRepository>();
             planRepository.Setup(m => m.Insertar(It.IsAny<Plan>()));
 
-            
+
 
             var servicio = new PlanService();
             servicio.setPlan(planRepository.Object);
@@ -109,11 +109,36 @@ namespace Nu34lifeTest
             {
                 Id = 5,
                 State = statePrueba,
-                State_Id=statePrueba.Id,
+                State_Id = statePrueba.Id,
                 Description = 2
             };
             var resultado = servicio.Insertar(Plan);
             Assert.IsTrue(resultado);
+        }
+
+
+
+        [TestMethod]
+        public void Editar_PerfilTest()
+        {
+            Mock<INutritionistRepository> nutritionistRepository = new Mock<INutritionistRepository>();
+            nutritionistRepository.Setup(u => u.Listar()).Returns(this.nutritionists);
+
+            var servicio = new NutritionistService();
+            servicio.setNutritionist(nutritionistRepository.Object);
+
+            var nutritionist = new Nutritionist()
+            {
+                Id = 12,
+                Name = "nutri1",
+                LastName = "nutri1_Last",
+                Email = "nutri1@pedro.com",
+                Password = "433644",
+                Validate = true
+            };
+            var resultado = servicio.letModificarPerfil(nutritionist, "4334");
+            Assert.IsTrue(resultado);
+
         }
     }
 }

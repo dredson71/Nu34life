@@ -14,16 +14,42 @@ namespace Business.Implementation
         private IRecipeRepository recipeRepository = new
                 RecipeRepository();
 
+        private IAllergyRepository allergyRepository =
+            new AllergyRepository();
+
         public bool Eliminar(int a, int b)
         {
             return recipeRepository.Eliminar(a, b);
+        }
+
+        public List<Recipe> ListarbyFiltro(Patient p)
+        {
+
+            List<Recipe> recipes = recipeRepository.Listar();
+            List<Allergy> allergies = allergyRepository.Listar();
+            for (int i = 0; i < allergies.Count(); i++)
+            {
+                if (allergies[i].Patient_Id != p.Id)
+                {
+                    allergies.RemoveAt(i);
+                    i -= 1;
+                }
+
+
+            }
+            for (int i = 0; i < recipes.Count(); i++)
+                if (recipes[i].Recipe_Details.ElementAt(i).Ingredient_Id == allergies[i].Ingredient_Id)
+                {
+                    recipes.RemoveAt(i);
+                    i -= 1;
+                }
+            return recipeRepository.Listar();
         }
 
         public List<Recipe> Listar()
         {
             return recipeRepository.Listar();
         }
-
         public Recipe ListarPorId(int? id)
         {
             return recipeRepository.ListarPorId(id);

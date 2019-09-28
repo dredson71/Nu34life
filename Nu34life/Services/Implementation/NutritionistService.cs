@@ -33,6 +33,23 @@ namespace Business.Implementation
         {
             return nutritionistRepository.ListarPorId(id);
         }
+        public bool letModificarPerfil(Nutritionist n,String password)
+
+        {
+            List<Nutritionist> nutritionists = nutritionistRepository.Listar();
+            for (int i = 0; i < nutritionists.Count(); i++)
+            {
+                if (nutritionists[i].Id == n.Id)
+                {
+                    if (nutritionists[i].Password == password)
+                    {
+                        nutritionistRepository.Actualizar(n);
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
 
         public bool Insertar(Nutritionist a)
         {
