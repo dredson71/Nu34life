@@ -14,6 +14,12 @@ namespace Business.Implementation
         private IPlanRepository planRepository = new
                 PlanRepository();
 
+        public void setPlan(IPlanRepository planRepository)
+        {
+            this.planRepository = planRepository;
+        }
+
+
         public bool Eliminar(int a, int b)
         {
             return planRepository.Eliminar(a, b);
@@ -31,12 +37,13 @@ namespace Business.Implementation
 
         public bool Insertar(Plan a)
         {
-            if(a.State == null)
+            if(a.State == null || a.State_Id==0)
             {
                 return false;
             }
             else
-            return planRepository.Insertar(a);
+            planRepository.Insertar(a);
+            return true;
         }
         public bool Actualizar(Plan a)
         {

@@ -14,6 +14,11 @@ namespace Business.Implementation
         private INutritionistRepository nutritionistRepository = new
                 NutritionistRepository();
 
+        public void setNutritionist(INutritionistRepository nutritionistRepository)
+        {
+            this.nutritionistRepository = nutritionistRepository;
+        }
+
         public bool Eliminar(int a, int b)
         {
             return nutritionistRepository.Eliminar(a, b);
@@ -42,7 +47,8 @@ namespace Business.Implementation
 
             }
 
-            return nutritionistRepository.Insertar(a);
+            nutritionistRepository.Insertar(a);
+            return true;
         }
         public bool Actualizar(Nutritionist a)
         {

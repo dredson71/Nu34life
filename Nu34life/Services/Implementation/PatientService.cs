@@ -14,6 +14,11 @@ namespace Business.Implementation
         private IPatientRepository patientRepository = new
                 PatientRepository();
 
+        public void setPatient(IPatientRepository patientRepository)
+        {
+            this.patientRepository = patientRepository;
+        }
+
         public bool Eliminar(int a, int b)
         {
             return patientRepository.Eliminar(a, b);
@@ -42,7 +47,8 @@ namespace Business.Implementation
 
             } 
          
-            return patientRepository.Insertar(a);
+             patientRepository.Insertar(a);
+            return true;
         }
         public bool Actualizar(Patient a)
         {
