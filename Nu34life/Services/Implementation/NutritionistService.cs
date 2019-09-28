@@ -69,7 +69,16 @@ namespace Business.Implementation
         }
         public bool Actualizar(Nutritionist a)
         {
-            return nutritionistRepository.Actualizar(a);
+            List<Nutritionist> nutritionists = nutritionistRepository.Listar();
+            for (int i = 0; i < nutritionists.Count(); i++)
+            {
+                    if (nutritionists[i].Email != a.Email)
+                    {
+                        return false;
+                    }
+            }
+            nutritionistRepository.Actualizar(a);
+            return true;
         }
 
     }

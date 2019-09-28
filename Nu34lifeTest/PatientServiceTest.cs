@@ -140,5 +140,30 @@ namespace Nu34lifeTest
             Assert.IsTrue(resultado);
 
         }
+
+
+
+        [TestMethod]
+        public void Editar_CorreoNutriTest()
+        {
+            Mock<INutritionistRepository> nutritionistRepository = new Mock<INutritionistRepository>();
+            nutritionistRepository.Setup(u => u.Listar()).Returns(this.nutritionists);
+
+            var servicio = new NutritionistService();
+            servicio.setNutritionist(nutritionistRepository.Object);
+
+            var nutritionist = new Nutritionist()
+            {
+                Id = 12,
+                Name = "nutri1",
+                LastName = "nutri1_Last",
+                Email = "nutri1@pedro.com",
+                Password = "433644",
+                Validate = true
+            };
+            var resultado = servicio.Actualizar(nutritionist);
+            Assert.IsTrue(resultado);
+
+        }
     }
 }
