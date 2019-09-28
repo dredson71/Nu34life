@@ -14,8 +14,19 @@ namespace Business.Implementation
         private IRecipeRepository recipeRepository = new
                 RecipeRepository();
 
+
         private IAllergyRepository allergyRepository =
             new AllergyRepository();
+
+        public void setRecipeRepo(IRecipeRepository recipeRepository)
+        {
+            this.recipeRepository = recipeRepository;
+        }
+
+        public void setAllergyRepo(IAllergyRepository allergyRepository)
+        {
+            this.allergyRepository = allergyRepository;
+        }
 
         public bool Eliminar(int a, int b)
         {

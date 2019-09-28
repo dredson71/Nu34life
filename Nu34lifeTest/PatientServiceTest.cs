@@ -13,13 +13,20 @@ namespace Nu34lifeTest
 
         private List<Patient> users = null;
         private List<Nutritionist> nutritionists = null;
+        private List<Allergy> allergies = null;
+        private List<Ingredient> ingredients = null;
+        private List<Recipe_Details> recipe_Details = null;
+        private List<Recipe> recipes = null;
+
+        List<Recipe_Details> icollection = new List<Recipe_Details>();
+        List<Recipe_Details> icollection2 = new List<Recipe_Details>();
         [TestInitialize]
         public void Setup()
         {
             this.users = new List<Patient>();
             users.Add(new Patient
             {
-                Id = 9,
+                Id = 1,
                 Name = "Diego",
                 Last_name = "Narrea",
                 Email = "pedro@pedro.com",
@@ -30,7 +37,7 @@ namespace Nu34lifeTest
             this.nutritionists = new List<Nutritionist>();
             nutritionists.Add(new Nutritionist
             {
-                Id = 12,
+                Id = 1,
                 Name = "nutri1",
                 LastName = "nutri1_Last",
                 Email = "nutri1@pedro.com",
@@ -38,6 +45,88 @@ namespace Nu34lifeTest
                 Validate = true
             });
 
+            this.ingredients = new List<Ingredient>();
+            ingredients.Add(new Ingredient
+            {
+                Id = 1,
+                Name = "zanahoria",
+                Description = "Verdura",
+                Carbohydrates = 10,
+                Fat=0
+            });
+            ingredients.Add(new Ingredient
+            {
+                Id = 2,
+                Name = "pera",
+                Description = "Fruta",
+                Carbohydrates = 10,
+                Fat = 0
+            });
+            ingredients.Add(new Ingredient
+            {
+                Id = 3,
+                Name = "lechuga",
+                Description = "Verdura",
+                Carbohydrates = 1,
+                Fat = 0
+            });
+
+            this.allergies = new List<Allergy>();
+            allergies.Add(new Allergy
+            {
+                Patient_Id = 1,
+                Ingredient_Id = 1
+            });
+
+            //Receta 1 con ingredientes 1-2
+
+            this.recipe_Details = new List<Recipe_Details>();
+            recipe_Details.Add(new Recipe_Details
+            {
+                Recipe_Id = 1,
+                Ingredient_Id = 1
+            });
+            
+            recipe_Details.Add(new Recipe_Details
+            {
+                Recipe_Id = 1,
+                Ingredient_Id = 2
+            });
+            //Receta  2 con ingredientes 2-3
+            recipe_Details.Add(new Recipe_Details
+            {
+                Recipe_Id = 2,
+                Ingredient_Id = 2
+            });
+            recipe_Details.Add(new Recipe_Details
+            {
+                Recipe_Id = 2,
+                Ingredient_Id = 3
+            });
+
+            icollection.Add(recipe_Details[0]);
+
+            icollection.Add(recipe_Details[1]);
+
+
+
+            this.recipes = new List<Recipe>();
+            recipes.Add(new Recipe
+            {
+                Id = 1,
+                Recipe_Details=icollection
+            });
+
+
+            icollection2.Add(recipe_Details[2]);
+
+            icollection2.Add(recipe_Details[3]);
+
+            recipes.Add(new Recipe
+            {
+                Id = 2,
+                Recipe_Details = icollection2
+            });
 
 
         }
@@ -52,15 +141,15 @@ namespace Nu34lifeTest
             servicio.setPatient(patientRepository.Object);
 
             var paciente = new Patient() {
-                Id = 10,
+                Id = 2,
                 Name = "Diego",
                 Last_name = "Narrea",
-                Email = "pedro@pedro.com",
+                Email = "pedro1@pedro.com",
                 Password = "4334",
                 Nutritionist_Id = 1
             };
             var resultado = servicio.Insertar(paciente);
-            Assert.IsFalse(resultado);
+            Assert.IsTrue(resultado);
         }
 
         [TestMethod]
@@ -74,15 +163,15 @@ namespace Nu34lifeTest
 
             var nutritionist = new Nutritionist()
             {
-                Id = 5,
+                Id = 2,
                 Name = "nutri4",
                 LastName = "nutri445_Last",
-                Email = "nutri1@pedro.com",
+                Email = "nutri12@pedro.com",
                 Password = "433664",
                 Validate = true
             };
             var resultado = servicio.Insertar(nutritionist);
-            Assert.IsFalse(resultado);
+            Assert.IsTrue(resultado);
         }
 
         [TestMethod]
@@ -129,7 +218,7 @@ namespace Nu34lifeTest
 
             var nutritionist = new Nutritionist()
             {
-                Id = 12,
+                Id = 1,
                 Name = "nutri1",
                 LastName = "nutri1_Last",
                 Email = "nutri1@pedro.com",
@@ -141,29 +230,37 @@ namespace Nu34lifeTest
 
         }
 
-
-
         [TestMethod]
-        public void Editar_CorreoNutriTest()
+        public void Allergie_Recipes()
         {
-            Mock<INutritionistRepository> nutritionistRepository = new Mock<INutritionistRepository>();
-            nutritionistRepository.Setup(u => u.Listar()).Returns(this.nutritionists);
+            Mock<IRecipeRepository> recipeRepository = new Mock<IRecipeRepository>();
+            recipeRepository.Setup(u => u.Listar()).Returns(this.recipes);
 
-            var servicio = new NutritionistService();
-            servicio.setNutritionist(nutritionistRepository.Object);
 
-            var nutritionist = new Nutritionist()
+            Mock<IAllergyRepository> allergyRepository = new Mock<IAllergyRepository>();
+            allergyRepository.Setup(u => u.Listar()).Returns(this.allergies);
+
+            var servicio = new RecipeService();
+            servicio.setRecipeRepo(recipeRepository.Object);
+            var servicio2 = new AllergyService();
+            servicio2.setAllergy(allergyRepository.Object);
+            
+            List<Recipe> resultado = servicio.ListarbyFiltro(users[0]);
+            List<Allergy> alergia = servicio2.Listar();
+            for (int i = 0; i < resultado.Count; i++)
             {
-                Id = 12,
-                Name = "nutri1",
-                LastName = "nutri1_Last",
-                Email = "nutri1@pedro.com",
-                Password = "433644",
-                Validate = true
-            };
-            var resultado = servicio.Actualizar(nutritionist);
-            Assert.IsTrue(resultado);
+             //   for(int j=0;j<alergia.Count;j++)
+             //   Assert.AreEqual(resultado[i].Recipe_Details.ElementAt(i). !=alergia[j].Ingredient_Id);
+            }
+           
 
         }
+
+
+
+
+
+
+
     }
 }

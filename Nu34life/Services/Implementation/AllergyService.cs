@@ -14,6 +14,11 @@ namespace Business.Implementation
         private IAllergyRepository allergyRepository = new
                 AllergyRepository();
 
+        public void setAllergy(IAllergyRepository allergyRepository)
+        {
+            this.allergyRepository = allergyRepository;
+        }
+
         public bool Eliminar(int a, int b)
         {
             return allergyRepository.Eliminar(a, b);

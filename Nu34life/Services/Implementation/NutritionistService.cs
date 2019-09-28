@@ -43,8 +43,11 @@ namespace Business.Implementation
                 {
                     if (nutritionists[i].Password == password)
                     {
-                        nutritionistRepository.Actualizar(n);
-                        return true;
+                        if (nutritionists[i].Email == n.Email)
+                        {
+                            nutritionistRepository.Actualizar(n);
+                            return true;
+                        }
                     }
                 }
             }
