@@ -17,12 +17,20 @@ namespace Nu34lifeTest
         private List<Ingredient> ingredients = null;
         private List<Recipe_Details> recipe_Details = null;
         private List<Recipe> recipes = null;
+        private List<Recipe> recipesFiltradas = null;
+        private State estadoG = new State();
+        private Plan plan = new Plan();
 
         List<Recipe_Details> icollection = new List<Recipe_Details>();
+        List<Plans_Recipes> iplanrecipe = new List<Plans_Recipes>();
         List<Recipe_Details> icollection2 = new List<Recipe_Details>();
         [TestInitialize]
         public void Setup()
         {
+
+
+            estadoG.setPatient_ID(1);
+            estadoG.setNutritionist_ID(1);
             this.users = new List<Patient>();
             users.Add(new Patient
             {
@@ -44,6 +52,8 @@ namespace Nu34lifeTest
                 Password = "4334",
                 Validate = true
             });
+
+            this.recipesFiltradas = new List<Recipe>();
 
             this.ingredients = new List<Ingredient>();
             ingredients.Add(new Ingredient
@@ -86,7 +96,10 @@ namespace Nu34lifeTest
                 Recipe_Id = 1,
                 Ingredient_Id = 1
             });
-            
+
+           
+
+
             recipe_Details.Add(new Recipe_Details
             {
                 Recipe_Id = 1,
@@ -103,6 +116,8 @@ namespace Nu34lifeTest
                 Recipe_Id = 2,
                 Ingredient_Id = 3
             });
+
+  
 
             icollection.Add(recipe_Details[0]);
 
@@ -128,6 +143,15 @@ namespace Nu34lifeTest
                 Recipe_Details = icollection2
             });
 
+            this.iplanrecipe.Add(new Plans_Recipes
+            {
+                Id = 1,
+                Plan_Id = 1,
+                Recipe_Id = 2
+            });
+
+            recipesFiltradas.Add(recipes[1]);
+            plan.setPlanRecipe(iplanrecipe);
 
         }
 
@@ -242,19 +266,32 @@ namespace Nu34lifeTest
 
             var servicio = new RecipeService();
             servicio.setRecipeRepo(recipeRepository.Object);
-            var servicio2 = new AllergyService();
-            servicio2.setAllergy(allergyRepository.Object);
+            servicio.setAllergyRepo(allergyRepository.Object);
             
             List<Recipe> resultado = servicio.ListarbyFiltro(users[0]);
-            List<Allergy> alergia = servicio2.Listar();
-            for (int i = 0; i < resultado.Count; i++)
-            {
-             //   for(int j=0;j<alergia.Count;j++)
-             //   Assert.AreEqual(resultado[i].Recipe_Details.ElementAt(i). !=alergia[j].Ingredient_Id);
-            }
-           
-
+            Assert.AreNotEqual(recipesFiltradas,resultado);
         }
+
+
+        [TestMethod]
+        public void actualizarEstado()
+        {
+            Mock<INutritionistRepository> nutritionistRepository = new Mock<INutritionistRepository>();
+            nutritionistRepository.Setup(u => u.Listar()).Returns(this.nutritionists);
+
+
+            Mock<IStateRepository> stateRepository = new Mock<IStateRepository>();
+            stateRepository.Setup(m => m.Insertar(It.IsAny<State>()));
+
+            var servicio = new NutritionistService();
+            servicio.setNutritionist(nutritionistRepository.Object);
+            servicio.setState(stateRepository.Object);
+
+            var resultado = servicio.actualizarEstado(users[0],estadoG, plan);
+            Assert.IsTrue( resultado);
+        }
+
+
 
 
 

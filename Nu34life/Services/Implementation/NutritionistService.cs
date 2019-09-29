@@ -11,18 +11,42 @@ namespace Business.Implementation
 {
     public class NutritionistService : INutritionistService
     {
+        int cantidadminima = 1;
         private INutritionistRepository nutritionistRepository = new
                 NutritionistRepository();
+
+        private IStateRepository stateRepository = new
+               StateRepository();
 
         public void setNutritionist(INutritionistRepository nutritionistRepository)
         {
             this.nutritionistRepository = nutritionistRepository;
         }
 
+        public void setState(IStateRepository stateRepository)
+        {
+            this.stateRepository = stateRepository;
+        }
+
         public bool Eliminar(int a, int b)
         {
             return nutritionistRepository.Eliminar(a, b);
         }
+
+
+        public bool actualizarEstado(Patient patient,State state,Plan plan)
+        {
+            if (patient.getEmail().Equals(""))
+                return false;
+            if (plan.getPlanRecipe().Count == 0)
+                return false;
+            if (!cantidadPlatosPermi(plan))
+                return false;
+
+             stateRepository.Insertar(state);
+            return true;
+        }
+
 
         public List<Nutritionist> Listar()
         {
@@ -81,6 +105,14 @@ namespace Business.Implementation
                     }
             }
             nutritionistRepository.Actualizar(a);
+            return true;
+        }
+
+
+        public bool cantidadPlatosPermi(Plan plan)
+        {
+            if (plan.getPlanRecipe().Count < cantidadminima)
+                return false;
             return true;
         }
 

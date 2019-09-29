@@ -28,6 +28,11 @@ namespace Nu34life.Models
         public string Email { get; set; }
         public string Password { get; set; }
         public int Nutritionist_Id { get; set; }
+
+        public string getEmail()
+        {
+            return this.Email;
+        }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Allergy> Allergies { get; set; }

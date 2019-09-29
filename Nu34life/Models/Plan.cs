@@ -27,5 +27,15 @@ namespace Nu34life.Models
         public virtual State State { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Plans_Recipes> Plans_Recipes { get; set; }
+
+        public ICollection<Plans_Recipes> getPlanRecipe()
+        {
+            return this.Plans_Recipes;
+        }
+
+        public void setPlanRecipe(ICollection<Plans_Recipes> Plans_Recipes)
+        {
+            this.Plans_Recipes = Plans_Recipes;
+        }
     }
 }
