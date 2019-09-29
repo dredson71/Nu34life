@@ -254,6 +254,20 @@ namespace Nu34lifeTest
 
         }
 
+
+        [TestMethod]
+        public void cantidadPlatosTest()
+        {
+            Mock<INutritionistRepository> nutritionistRepository = new Mock<INutritionistRepository>();
+            nutritionistRepository.Setup(u => u.Listar()).Returns(this.nutritionists);
+
+            var servicio = new NutritionistService();
+            servicio.setNutritionist(nutritionistRepository.Object);
+            var respuesta = servicio.cantidadPlatosPermi(plan);
+            Assert.IsTrue(respuesta);
+        }
+
+
         [TestMethod]
         public void Allergie_Recipes()
         {
