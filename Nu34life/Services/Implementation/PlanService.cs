@@ -50,7 +50,7 @@ namespace Business.Implementation
             return planRepository.Actualizar(a);
         }
 
-        public List<Plan> ListarByState(State s)
+        public Plan ListarByState(State s)
         {
             List<Plan> plans = planRepository.Listar();
             for (int i = 0; i < plans.Count(); i++)
@@ -63,7 +63,11 @@ namespace Business.Implementation
 
 
             }
-            return plans;
+
+            if (plans.Count() != 1)
+                return null;
+
+            return plans.ElementAt(0);
         } 
 
     }

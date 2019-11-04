@@ -46,7 +46,7 @@ namespace Business.Implementation
 
         public bool Insertar(State a)
         {
-            if (a.Description.Count() < 25 && a.Generated_day < a.Expiration)
+            if (a.Description.Count() < 75 && a.Generated_day < a.Expiration)
                 return stateRepository.Insertar(a);
             else return false;
 

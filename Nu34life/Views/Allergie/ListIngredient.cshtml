@@ -1,0 +1,10 @@
+﻿@model IEnumerable<Nu34life.Models.Ingredient>
+<select class="form-control" id="Ingredient_Id" name="Ingredient_Id">
+    @foreach (var item in Model)
+    {
+        <option value="@item.Id">@item.Name</option>
+    }
+</select>
+
+
+

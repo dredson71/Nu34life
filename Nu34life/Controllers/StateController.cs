@@ -82,7 +82,7 @@ namespace Nu34life.Controllers
                 {
                     var Cat = (Patient)TempData["Patient"];
                     n.setPatient_ID (Cat.Id);
-                    n.setNutritionist_ID(1);
+                    n.setNutritionist_ID(2);
 
                     var cond=stateService.Insertar(n);
 

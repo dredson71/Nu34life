@@ -62,7 +62,7 @@ namespace Nu34lifeTest
                 Name = "zanahoria",
                 Description = "Verdura",
                 Carbohydrates = 10,
-                Fat=0
+                Fat = 0
             });
             ingredients.Add(new Ingredient
             {
@@ -97,7 +97,7 @@ namespace Nu34lifeTest
                 Ingredient_Id = 1
             });
 
-           
+
 
 
             recipe_Details.Add(new Recipe_Details
@@ -117,7 +117,7 @@ namespace Nu34lifeTest
                 Ingredient_Id = 3
             });
 
-  
+
 
             icollection.Add(recipe_Details[0]);
 
@@ -129,7 +129,7 @@ namespace Nu34lifeTest
             recipes.Add(new Recipe
             {
                 Id = 1,
-                Recipe_Details=icollection
+                Recipe_Details = icollection
             });
 
 
@@ -229,6 +229,19 @@ namespace Nu34lifeTest
             Assert.IsTrue(resultado);
         }
 
+       [TestMethod]
+       public void FiltrarRecetasTest()
+        {
+            Mock<IRecipeRepository> recipeRepository = new Mock<IRecipeRepository>();
+            recipeRepository.Setup(u => u.Listar()).Returns(this.recipes);
+
+            var servicio = new RecipeService();
+            servicio.setRecipeRepo(recipeRepository.Object);
+
+            List<Recipe> respuesta = servicio.filtrarRecetas(icollection);
+            Assert.AreEqual(recipesFiltradas, respuesta);
+
+        }
 
 
         [TestMethod]

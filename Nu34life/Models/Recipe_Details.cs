@@ -20,5 +20,11 @@ namespace Nu34life.Models
     
         public virtual Ingredient Ingredient { get; set; }
         public virtual Recipe Recipe { get; set; }
+
+
+        public Recipe GetRecipe()
+        {
+           return  this.Recipe;
+        }
     }
 }

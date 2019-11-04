@@ -6,18 +6,18 @@
 }
 <h2>Paciente</h2>
 <p>
-    @Html.ActionLink("Crear Paciente", "Create")
+    @Html.ActionLink("Crear Alergia", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            Name
+            Description 
         </th>
         <th>
-            Last Name
+           Ingrediente
         </th>
         <th>
-            Birthday
+            Paciente
         </th>
 
 
@@ -31,10 +31,10 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Ingredient_Id)
+                @Html.DisplayFor(modelItem => item.Ingredient.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Patient_Id)
+                @Html.DisplayFor(modelItem => item.Patient.Name)
             </td>
          
 

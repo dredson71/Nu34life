@@ -17,25 +17,38 @@ namespace Nu34life.Controllers
         }
 
         IPlanService planService = new PlanService();
+        IPlan_RecipeService plan_RecipeService = new Plan_RecipeService();
         // GET: Plan
         public ActionResult Index()
         {
-            using (var db = new Nu34lifeEntities())
-            {
-                PartialView(db.Plans.ToList());
-            }
             if (TempData["State"] != null)
             {
                 var st = (State)TempData["State"];
                 TempData.Keep("State");
 
+                var a = plan_RecipeService.ListarporPlan(st);
+
+                
+
+                Plans_Recipes vacio = new Plans_Recipes();
+                ICollection<Plans_Recipes> planRecipiente = new List<Plans_Recipes>();
+                planRecipiente.Add(vacio);
 
 
-                return View(planService.ListarByState(st));
+                if (a != null)
+                {
+                    planService.ListarByState(st).setPlanRecipe(a);
+                    return View(planService.ListarByState(st).getPlanRecipe());
+                }
+                else
+                {
+                    return View(planRecipiente);
+                }
+                
             }
             else
             {
-                return View(planService.Listar());
+                return View(plan_RecipeService.Listar());
             }
         }
 
@@ -64,12 +77,22 @@ namespace Nu34life.Controllers
 
             try
             {
-                using (var db = new Nu34lifeEntities())
-                {
-                    db.Plans.Add(m);
-                    db.SaveChanges();
+                
+                 var st = (State)TempData["State"];
+
+                m.setState(st);
+                m.setState_Id(st.Id);
+
+                var cond = planService.Insertar(m);
+
+                if (cond)
                     return RedirectToAction("Index");
+
+                else
+                {
+                    return View();
                 }
+                
             }
             catch (Exception ex)
             {

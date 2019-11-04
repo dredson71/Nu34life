@@ -29,6 +29,7 @@ namespace Nu34life.Models
         public string Password { get; set; }
         public int Nutritionist_Id { get; set; }
 
+
         public string getEmail()
         {
             return this.Email;

@@ -10,7 +10,7 @@
             <PropertyRef Name="Patient_Id" />
             <PropertyRef Name="Ingredient_Id" />
           </Key>
-          <Property Name="Patient_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Patient_Id" Type="int" Nullable="false" />
           <Property Name="Ingredient_Id" Type="int" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="150" Nullable="false" />
         </EntityType>
@@ -411,7 +411,7 @@
             <PropertyRef Name="Patient_Id" />
             <PropertyRef Name="Ingredient_Id" />
           </Key>
-          <Property Name="Patient_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Patient_Id" Type="Int32" Nullable="false" />
           <Property Name="Ingredient_Id" Type="Int32" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Ingredient" Relationship="Self.Table_7_Ingredient" FromRole="Allergy" ToRole="Ingredient" />

@@ -33,6 +33,21 @@ namespace Business.Implementation
             return recipeRepository.Eliminar(a, b);
         }
 
+
+
+        public List<Recipe>filtrarRecetas(List<Recipe_Details> lista)
+        {
+            List<Recipe> listaRecetas = recipeRepository.Listar();
+           for(int i = 0; i < lista.Count; i++)
+            {
+                listaRecetas.Remove(lista[i].GetRecipe());
+            }
+            return listaRecetas;
+        }
+
+
+
+
         public List<Recipe> ListarbyFiltro(Patient p)
         {
 

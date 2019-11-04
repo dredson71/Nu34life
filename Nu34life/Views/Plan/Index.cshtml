@@ -1,6 +1,5 @@
 ﻿
-
-@model IEnumerable<Nu34life.Models.Plan>
+@model ICollection<Nu34life.Models.Plans_Recipes>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -12,7 +11,7 @@
 <table class="table">
     <tr>
         <th>
-            Description
+            Nombre
         </th>
 
         <th></th>
@@ -21,7 +20,8 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Description)
+                @Html.DisplayFor(modelItem => item.Recipe.Name)
+
             </td>
 
 

@@ -1,0 +1,9 @@
+﻿@model IEnumerable<Nu34life.Models.Patient>
+<select class="form-control" id="Patient_Id" name="Patient_Id">
+    @foreach (var item in Model)
+    {
+        <option value="@item.Id">@item.Name</option>
+    }
+</select>
+
+

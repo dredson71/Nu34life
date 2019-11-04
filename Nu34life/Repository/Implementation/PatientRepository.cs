@@ -22,7 +22,9 @@ namespace Data.Implementacion
 
         public Patient ListarPorId(int? id)
         {
-            throw new NotImplementedException();
+
+            var db = new Nu34lifeEntities();
+            return db.Patients.Find(id);
         }
 
         public bool Actualizar(Patient a)

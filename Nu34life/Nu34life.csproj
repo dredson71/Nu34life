@@ -173,13 +173,13 @@
       <DependentUpon>ModelNu34life.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ModelNu34life.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>ModelNu34life.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Models\ModelNu34life.Designer.cs">
-      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
       <DependentUpon>ModelNu34life.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Nutritionist.cs">
@@ -216,12 +216,14 @@
     <Compile Include="Repository\Implementation\NutritionistRepository.cs" />
     <Compile Include="Repository\Implementation\PatientRepository.cs" />
     <Compile Include="Repository\Implementation\PlanRepository.cs" />
+    <Compile Include="Repository\Implementation\Plan_RecipeRepository.cs" />
     <Compile Include="Repository\Implementation\RecipeRepository.cs" />
     <Compile Include="Repository\Implementation\Recipes_DetailsRepository.cs" />
     <Compile Include="Repository\Implementation\StateRepository.cs" />
     <Compile Include="Repository\INutritionistRepository.cs" />
     <Compile Include="Repository\IPatientRepository.cs" />
     <Compile Include="Repository\IPlanRepository.cs" />
+    <Compile Include="Repository\IPlan_RecipeRepository.cs" />
     <Compile Include="Repository\IRecipeRepository.cs" />
     <Compile Include="Repository\IRecipes_DetailsRepository.cs" />
     <Compile Include="Repository\IRepository.cs" />
@@ -236,12 +238,14 @@
     <Compile Include="Services\Implementation\NutritionistService.cs" />
     <Compile Include="Services\Implementation\PatientService.cs" />
     <Compile Include="Services\Implementation\PlanService.cs" />
+    <Compile Include="Services\Implementation\Plan_RecipeService.cs" />
     <Compile Include="Services\Implementation\RecipeService.cs" />
     <Compile Include="Services\Implementation\Recipe_DetailsService.cs" />
     <Compile Include="Services\Implementation\StateService.cs" />
     <Compile Include="Services\INutritionistService.cs" />
     <Compile Include="Services\IPatientService.cs" />
     <Compile Include="Services\IPlanService.cs" />
+    <Compile Include="Services\IPlan_RecipeService.cs" />
     <Compile Include="Services\IRecipeService.cs" />
     <Compile Include="Services\IRecipe_DetailsService.cs" />
     <Compile Include="Services\IService.cs" />
@@ -261,10 +265,13 @@
       <DependentUpon>ModelNu34life.edmx</DependentUpon>
       <LastGenOutput>ModelNu34life.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\ModelNu34life.edmx.diagram">
+      <DependentUpon>ModelNu34life.edmx</DependentUpon>
+    </Content>
     <Content Include="Models\ModelNu34life.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelNu34life.edmx</DependentUpon>
       <LastGenOutput>ModelNu34life.cs</LastGenOutput>
+      <DependentUpon>ModelNu34life.edmx</DependentUpon>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -272,9 +279,6 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelNu34life.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\ModelNu34life.edmx.diagram">
-      <DependentUpon>ModelNu34life.edmx</DependentUpon>
-    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -342,6 +346,10 @@
     <Content Include="Views\Plan\Index.cshtml" />
     <Content Include="Views\State\SearchPlan.cshtml" />
     <Content Include="Views\State\ListaState.cshtml" />
+    <Content Include="Views\Allergie\Create.cshtml" />
+    <Content Include="Views\Allergie\ListPatient.cshtml" />
+    <Content Include="Views\Allergie\ListIngredient.cshtml" />
+    <Content Include="Views\Plan\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

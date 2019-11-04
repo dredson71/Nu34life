@@ -5,10 +5,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+using Business;
+using Business.Implementation;
+
 namespace Nu34life.Controllers
 {
     public class AllergieController : Controller
     {
+        IPatientService patientService = new PatientService();
+        IIngredientService ingredientService = new IngredientService();
+        IAllergyService allergyService = new AllergyService();
         Nu34lifeEntities ctx;
         public AllergieController()
         {
@@ -43,6 +49,8 @@ namespace Nu34life.Controllers
 
         public ActionResult Create()
         {
+
+            var db = new Nu34lifeEntities();
             return View();
         }
 
@@ -56,12 +64,11 @@ namespace Nu34life.Controllers
 
             try
             {
-                using (var db = new Nu34lifeEntities())
-                {
-                    db.Allergies.Add(d);
-                    db.SaveChanges();
+                var result = allergyService.Insertar(d);
+                if (result)
                     return RedirectToAction("Index");
-                }
+                else
+                    return RedirectToAction("Create");
             }
             catch (Exception ex)
             {
@@ -133,6 +140,24 @@ namespace Nu34life.Controllers
                 return RedirectToAction("Index");
             }
         }
+
+
+
+        public ActionResult ListPatient()
+        {
+            
+                return PartialView(patientService.Listar());
+            
+        }
+
+
+        public ActionResult ListIngredient()
+        {
+            return PartialView(ingredientService.Listar());
+
+        }
+
+
     }
 
 }

@@ -23,19 +23,30 @@ namespace Nu34life.Models
         public int Id { get; set; }
         public int Description { get; set; }
         public int State_Id { get; set; }
-    
-        public virtual State State { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Plans_Recipes> Plans_Recipes { get; set; }
+
+
+
+        public void setState(State st)
+        {
+            this.State = st;
+        }
+        public void setState_Id(int State_Id)
+        {
+            this.State_Id = State_Id;
+        }
 
         public ICollection<Plans_Recipes> getPlanRecipe()
         {
             return this.Plans_Recipes;
         }
 
-        public void setPlanRecipe(ICollection<Plans_Recipes> Plans_Recipes)
+        public ICollection<Plans_Recipes> setPlanRecipe(ICollection<Plans_Recipes> Plans_Recipes)
         {
-            this.Plans_Recipes = Plans_Recipes;
+            return this.Plans_Recipes= Plans_Recipes;
         }
+
+        public virtual State State { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Plans_Recipes> Plans_Recipes { get; set; }
     }
 }

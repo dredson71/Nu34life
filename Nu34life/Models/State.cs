@@ -31,14 +31,18 @@ namespace Nu34life.Models
         public System.DateTime Expiration { get; set; }
         public int Nutritionist_Id { get; set; }
         public int Patient_Id { get; set; }
-        public void setPatient_ID(int v)
+
+       public void setPatient_ID(int Patient_Id)
         {
-            this.Patient_Id = v;
+            this.Patient_Id = Patient_Id;
         }
-        public void setNutritionist_ID(int v)
+
+        public void setNutritionist_ID(int Nutritionist_Id)
         {
-            this.Nutritionist_Id = v;
+            this.Nutritionist_Id = Nutritionist_Id;
         }
+
+
 
         public virtual Nutritionist Nutritionist { get; set; }
         public virtual Patient Patient { get; set; }
