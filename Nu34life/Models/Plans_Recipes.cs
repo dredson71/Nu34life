@@ -19,7 +19,17 @@ namespace Nu34life.Models
         public System.DateTime Date { get; set; }
         public int Recipe_Id { get; set; }
         public int Plan_Id { get; set; }
-    
+
+        public void setPlan(Plan p)
+        {
+            this.Plan = p;
+        }
+        public void setPlan_Id(int Plan)
+        {
+            this.Plan_Id = Plan;
+        }
+
+
         public virtual Plan Plan { get; set; }
         public virtual Recipe Recipe { get; set; }
     }

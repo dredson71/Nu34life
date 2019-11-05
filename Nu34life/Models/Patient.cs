@@ -34,6 +34,7 @@ namespace Nu34life.Models
         {
             return this.Email;
         }
+
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Allergy> Allergies { get; set; }

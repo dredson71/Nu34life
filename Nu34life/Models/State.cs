@@ -32,6 +32,11 @@ namespace Nu34life.Models
         public int Nutritionist_Id { get; set; }
         public int Patient_Id { get; set; }
 
+        public int GetId()
+        {
+            return Id;
+        }
+
        public void setPatient_ID(int Patient_Id)
         {
             this.Patient_Id = Patient_Id;
@@ -40,6 +45,11 @@ namespace Nu34life.Models
         public void setNutritionist_ID(int Nutritionist_Id)
         {
             this.Nutritionist_Id = Nutritionist_Id;
+        }
+
+        public Patient GetPatient()
+        {
+            return Patient;
         }
 
 

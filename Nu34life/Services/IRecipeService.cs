@@ -9,6 +9,6 @@ namespace Business
 {
     public interface IRecipeService : IService<Recipe>
     {
-
+        List<Recipe> ListarbyFiltro(Patient p);
     }
 }

@@ -37,7 +37,7 @@ namespace Business.Implementation
 
         public bool Insertar(Plan a)
         {
-            if(a.State == null || a.State_Id==0)
+            if(a.State_Id==0)
             {
                 return false;
             }
@@ -49,6 +49,7 @@ namespace Business.Implementation
         {
             return planRepository.Actualizar(a);
         }
+        
 
         public Plan ListarByState(State s)
         {

@@ -16,14 +16,21 @@ namespace Nu34life.Controllers
             ctx = new Nu34lifeEntities();
         }
 
+        IPatientService patientService = new PatientService();
         IPlanService planService = new PlanService();
+        IRecipeService recipeService = new RecipeService();
+        IStateService stateService = new StateService();
         IPlan_RecipeService plan_RecipeService = new Plan_RecipeService();
         // GET: Plan
+
+
+            
         public ActionResult Index()
         {
             if (TempData["State"] != null)
             {
                 var st = (State)TempData["State"];
+                TempData["statedata"] = st;
                 TempData.Keep("State");
 
                 var a = plan_RecipeService.ListarporPlan(st);
@@ -37,19 +44,26 @@ namespace Nu34life.Controllers
 
                 if (a != null)
                 {
-                    planService.ListarByState(st).setPlanRecipe(a);
+                    
+                    var plandata_aux=planService.ListarByState(st).setPlanRecipe(a);
+                    TempData["Plan"] = plandata_aux;
+                    TempData["stated"] = st;
+                    TempData.Keep("stated");
+                    TempData.Keep("Plan");
                     return View(planService.ListarByState(st).getPlanRecipe());
+                   
                 }
                 else
                 {
                     return View(planRecipiente);
                 }
-                
+
             }
             else
             {
                 return View(plan_RecipeService.Listar());
             }
+            
         }
 
 
@@ -57,15 +71,72 @@ namespace Nu34life.Controllers
         public ActionResult Index(int id = 0)
         {
             var Data = TempData["State"] as State;
-
-
+            TempData.Keep("State");
             return RedirectToAction("Index");
         }
 
         public ActionResult Create()
         {
+            var Data = TempData["State"] as State;
             return View();
         }
+
+        public ActionResult CreatePlan_Recipe()
+        {
+            return View();
+        }
+
+        public ActionResult ListaRecipe()
+        {
+            var Data = TempData["statedata"] as State;
+        
+            return PartialView(recipeService.Listar());
+           
+        }
+
+
+        [HttpPost]
+        public ActionResult CreatePlan_Recipe(Plans_Recipes m)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            try
+            {
+                var Data = TempData["stated"] as State;
+                var plandata = (Plan)TempData["Plan"];
+                TempData.Keep("Plan");
+                TempData.Keep("stated");
+                var state = stateService.ListarPorId(Data.GetId());
+
+              
+                var planbyservice=planService.ListarByState(Data);
+                m.setPlan_Id(plandata.Id);
+
+
+                var cond = plan_RecipeService.Insertar(m);
+                m.setPlan(planbyservice);
+
+                if (cond)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return View();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("Error al agregar la membresia", ex);
+                return View();
+            }
+        }
+
+
 
         [HttpPost]
         public ActionResult Create(Plan m)
@@ -78,15 +149,24 @@ namespace Nu34life.Controllers
             try
             {
                 
-                 var st = (State)TempData["State"];
+                 var st = (State)TempData["statedata"];
+                TempData.Keep("statedata");
+                var statetemp =stateService.ListarPorId(st.Id);
 
-                m.setState(st);
+
                 m.setState_Id(st.Id);
 
                 var cond = planService.Insertar(m);
 
+                m.setState(statetemp);
                 if (cond)
-                    return RedirectToAction("Index");
+                {
+                    TempData["stated"]= st;
+                    TempData["Plan"] = m;
+                    TempData.Keep("Plan");
+                    TempData.Keep("stated");
+                    return RedirectToAction("CreatePlan_Recipe");
+                }
 
                 else
                 {

@@ -22,7 +22,8 @@ namespace Data.Implementacion
 
         public State ListarPorId(int? id)
         {
-            throw new NotImplementedException();
+            var db = new Nu34lifeEntities();
+            return db.States.Find(id);
 
         }
 
