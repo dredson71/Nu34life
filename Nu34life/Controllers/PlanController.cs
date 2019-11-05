@@ -35,8 +35,6 @@ namespace Nu34life.Controllers
 
                 var a = plan_RecipeService.ListarporPlan(st);
 
-                
-
                 Plans_Recipes vacio = new Plans_Recipes();
                 ICollection<Plans_Recipes> planRecipiente = new List<Plans_Recipes>();
                 planRecipiente.Add(vacio);
@@ -46,7 +44,7 @@ namespace Nu34life.Controllers
                 {
                     
                     var plandata_aux=planService.ListarByState(st).setPlanRecipe(a);
-                    TempData["Plan"] = plandata_aux;
+                    TempData["Plan"] = planService.ListarByState(st);
                     TempData["stated"] = st;
                     TempData.Keep("stated");
                     TempData.Keep("Plan");
@@ -121,6 +119,7 @@ namespace Nu34life.Controllers
 
                 if (cond)
                 {
+                    TempData["State"] = state;
                     return RedirectToAction("Index");
                 }
                 else
