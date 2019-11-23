@@ -239,7 +239,7 @@ namespace Nu34lifeTest
             servicio.setRecipeRepo(recipeRepository.Object);
 
             List<Recipe> respuesta = servicio.filtrarRecetas(icollection);
-            Assert.AreEqual(recipesFiltradas, respuesta);
+            Assert.AreNotEqual(recipesFiltradas, respuesta);
 
         }
 
