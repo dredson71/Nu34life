@@ -1,0 +1,109 @@
+﻿2019-11-23T02:43:00.4463885-05:00;VSTestExecutionThread;Info;SpecFlow+Runner execution started
+2019-11-23T02:43:00.4463885-05:00;VSTestExecutionThread;Info;SpecFlow+Runner 3.1.33 in Framework clr40 in x86 mode execution started
+2019-11-23T02:43:00.4463885-05:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34life\UnitTestProject1\bin\Debug\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-11-23T02:43:00.4812956-05:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34life\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+2019-11-23T02:43:00.4812956-05:00;VSTestExecutionThread;Info;Output folder configured to "C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34life\TestResults" (default)
+2019-11-23T02:43:00.4812956-05:00;VSTestExecutionThread;Info;Profile: 
+2019-11-23T02:43:00.5032370-05:00;VSTestExecutionThread;Info;Log file path: C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34life\TestResults\Unnamed project__2019-11-23T024300.log
+2019-11-23T02:43:00.5161994-05:00;VSTestExecutionThread;Info;SpecFlow+Runner Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-11-23T02:43:00.5232094-05:00;Thread#13;Info;Checking license
+2019-11-23T02:43:00.5381616-05:00;Thread#13;Info;Evaluation mode: test execution starts in 14 seconds... (this delay is removed in the registered version)
+2019-11-23T02:43:14.5389925-05:00;Thread#13;Info;Evaluation delay finished.
+2019-11-23T02:43:14.5439815-05:00;Thread#13;Info;License check completed
+2019-11-23T02:43:14.5439815-05:00;Thread#13;Info;starting test run
+2019-11-23T02:43:14.5529570-05:00;Thread#13;Info;Discovering target: Default
+2019-11-23T02:43:14.5529570-05:00;Thread#13;Info;Discovering tests from assembly: C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34life\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+2019-11-23T02:43:14.8172530-05:00;Thread#13;Info;Discovered tests from assembly: C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34life\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+2019-11-23T02:43:14.8182494-05:00:Test Suite Dump
+2019-11-23T02:43:14.8202706-05:00:#0: Unnamed project/ - 
+2019-11-23T02:43:14.8202706-05:00:#1: Default - 
+2019-11-23T02:43:14.8202706-05:00:#2: UnitTestProject1 - 
+2019-11-23T02:43:14.8202706-05:00:#3: SpecFlowFeature1 - 
+2019-11-23T02:43:14.8521573-05:00:#4: PatientRegister - TestAssembly:UnitTestProject1/Feature:SpecFlowFeature1/Scenario:PatientRegister
+2019-11-23T02:43:14.8521573-05:00:End: Test Suite Dump
+2019-11-23T02:43:14.8721030-05:00:Thread#0:Scheduler: get next test for thread 0
+2019-11-23T02:43:14.8740977-05:00:Thread#:Scheduler: testitem #4 from normal test queue 
+2019-11-23T02:43:14.8740977-05:00:Thread#0:Scheduler: considering testitem #4 for thread 0
+2019-11-23T02:43:14.8770896-05:00:Thread#0:TestItem#4:testItemMatchesCurrentTestThread:UnSpecific
+2019-11-23T02:43:14.8770896-05:00:Thread#0:TestItem#4:runsOnOneOtherThreadSpecific:False
+2019-11-23T02:43:14.8770896-05:00:Thread#0:TestItem#4:runsOnOneOtherThreadUnspecific:False
+2019-11-23T02:43:14.8770896-05:00:Thread#0:Scheduler: using testitem #4 for thread 0
+2019-11-23T02:43:14.8780870-05:00:Thread#0:Scheduler: Test #4 is scheduled for thread
+2019-11-23T02:43:14.8790844-05:00:Thread#0:Scheduler: with testItemExecutionIndex 0
+2019-11-23T02:43:14.8820801-05:00:Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+2019-11-23T02:43:14.8840724-05:00:Thread #0: Creating test assembly executor for execution model AppDomain
+2019-11-23T02:43:14.8860661-05:00:Thread #0: Creating test assembly executor for execution model AppDomain
+2019-11-23T02:43:14.8870633-05:00:Thread #0: using TechTalk.SpecRun.Framework.Execution.InProcess.InProcAppDomainTestAssemblyExecutorHost to execute tests
+2019-11-23T02:43:14.9559064-05:00:Thread#0: Test #4/0 is started on thread #0
+2019-11-23T02:43:15.1633503-05:00:Thread#0:T:-> Loading plugin C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34life\UnitTestProject1\bin\Debug\SpecRun.Runtime.SpecFlowPlugin.dll
+2019-11-23T02:43:15.1703343-05:00:Thread#0:T:-> Using default config
+2019-11-23T02:43:15.2451338-05:00:Thread#0:B:Given The nutritionist has entered all the information about the patient
+2019-11-23T02:43:15.4624033-05:00:Thread#0:T:error: Index was out of range. Must be non-negative and less than the size of the collection.
+2019-11-23T02:43:15.4634141-05:00:Thread#0:T:Parameter name: index
+2019-11-23T02:43:15.4643981-05:00:Thread#0:B:When He clicks on Register button
+2019-11-23T02:43:15.4643981-05:00:Thread#0:T:skipped because of previous errors
+2019-11-23T02:43:15.4643981-05:00:Thread#0:B:Then He should be redirected to the patient index page
+2019-11-23T02:43:15.4643981-05:00:Thread#0:T:skipped because of previous errors
+2019-11-23T02:43:15.4993047-05:00:Thread#0:TestItem#4:Scheduler: reschedule tests for testitem #4
+2019-11-23T02:43:15.5003023-05:00:Thread#0:Scheduler: get next test for thread 0
+2019-11-23T02:43:15.5003023-05:00:Thread#:Scheduler: dequeuing a rescheduled testitem: #4
+2019-11-23T02:43:15.5003023-05:00:Thread#0:Scheduler: considering testitem #4 for thread 0
+2019-11-23T02:43:15.5003023-05:00:Thread#0:TestItem#4:testItemMatchesCurrentTestThread:UnSpecific
+2019-11-23T02:43:15.5003023-05:00:Thread#0:TestItem#4:runsOnOneOtherThreadSpecific:False
+2019-11-23T02:43:15.5003023-05:00:Thread#0:TestItem#4:runsOnOneOtherThreadUnspecific:False
+2019-11-23T02:43:15.5003023-05:00:Thread#0:Scheduler: using testitem #4 for thread 0
+2019-11-23T02:43:15.5003023-05:00:Thread#0:Scheduler: Test #4 is scheduled for thread
+2019-11-23T02:43:15.5003023-05:00:Thread#0:Scheduler: with testItemExecutionIndex 1
+2019-11-23T02:43:15.5162599-05:00:Thread#0: Test #4/0 is finished on thread #0 as Failed within 0.5593557 seconds
+2019-11-23T02:43:15.5172578-05:00:Thread#0: Test #4/1 is started on thread #0
+2019-11-23T02:43:15.5182587-05:00:Thread#0:B:Given The nutritionist has entered all the information about the patient
+2019-11-23T02:43:15.5192519-05:00:Thread#0:T:error: Index was out of range. Must be non-negative and less than the size of the collection.
+2019-11-23T02:43:15.5192519-05:00:Thread#0:T:Parameter name: index
+2019-11-23T02:43:15.5192519-05:00:Thread#0:B:When He clicks on Register button
+2019-11-23T02:43:15.5192519-05:00:Thread#0:T:skipped because of previous errors
+2019-11-23T02:43:15.5192519-05:00:Thread#0:B:Then He should be redirected to the patient index page
+2019-11-23T02:43:15.5192519-05:00:Thread#0:T:skipped because of previous errors
+2019-11-23T02:43:15.5202487-05:00:Thread#0:Scheduler: get next test for thread 0
+2019-11-23T02:43:15.5202487-05:00:Thread#:Scheduler: dequeuing a rescheduled testitem: #4
+2019-11-23T02:43:15.5202487-05:00:Thread#0:Scheduler: considering testitem #4 for thread 0
+2019-11-23T02:43:15.5202487-05:00:Thread#0:TestItem#4:testItemMatchesCurrentTestThread:UnSpecific
+2019-11-23T02:43:15.5202487-05:00:Thread#0:TestItem#4:runsOnOneOtherThreadSpecific:False
+2019-11-23T02:43:15.5202487-05:00:Thread#0:TestItem#4:runsOnOneOtherThreadUnspecific:False
+2019-11-23T02:43:15.5202487-05:00:Thread#0:Scheduler: using testitem #4 for thread 0
+2019-11-23T02:43:15.5202487-05:00:Thread#0:Scheduler: Test #4 is scheduled for thread
+2019-11-23T02:43:15.5202487-05:00:Thread#0:Scheduler: with testItemExecutionIndex 2
+2019-11-23T02:43:15.5202487-05:00:Thread#0: Test #4/1 is finished on thread #0 as Failed within 0.0029909 seconds
+2019-11-23T02:43:15.5212461-05:00:Thread#0: Test #4/2 is started on thread #0
+2019-11-23T02:43:15.5212461-05:00:Thread#0:B:Given The nutritionist has entered all the information about the patient
+2019-11-23T02:43:15.5212461-05:00:Thread#0:T:error: Index was out of range. Must be non-negative and less than the size of the collection.
+2019-11-23T02:43:15.5222457-05:00:Thread#0:T:Parameter name: index
+2019-11-23T02:43:15.5222457-05:00:Thread#0:B:When He clicks on Register button
+2019-11-23T02:43:15.5222457-05:00:Thread#0:T:skipped because of previous errors
+2019-11-23T02:43:15.5222457-05:00:Thread#0:B:Then He should be redirected to the patient index page
+2019-11-23T02:43:15.5222457-05:00:Thread#0:T:skipped because of previous errors
+2019-11-23T02:43:15.5232412-05:00:Thread#0:Scheduler: get next test for thread 0
+2019-11-23T02:43:15.5232412-05:00:Thread#:Scheduler: at the end of normal test queue
+2019-11-23T02:43:15.5232412-05:00:Thread#0:Scheduler: enumerator for thread is at end
+2019-11-23T02:43:15.5232412-05:00:Thread#0:Scheduler: No more tests for thread
+2019-11-23T02:43:15.5242658-05:00:Thread#0: Test #4/2 is finished on thread #0 as Failed within 0.0030197 seconds
+2019-11-23T02:43:15.5391978-05:00:Trying to cancel thread
+2019-11-23T02:43:15.5391978-05:00:Thread cancelled
+2019-11-23T02:43:15.5452126-05:00:Thread#-1:Scheduler: get next test for thread -1
+2019-11-23T02:43:15.5452126-05:00:Thread#:Scheduler: at the end of normal test queue
+2019-11-23T02:43:15.5452126-05:00:Thread#-1:Scheduler: enumerator for thread is at end
+2019-11-23T02:43:15.5502012-05:00;Thread#13;Info;test run finished
+2019-11-23T02:43:15.5502012-05:00;Thread#13;Info;publishing test results
+2019-11-23T02:43:15.5761270-05:00;Thread#13;Info;test results published
+2019-11-23T02:43:15.5761270-05:00;Thread#13;Info;generating reports
+2019-11-23T02:43:15.6848094-05:00;Thread#13;Info;Starting external report generation process
+2019-11-23T02:43:16.2516535-05:00;Thread#13;Error;Could not generate test run result reports. An error occurred in the generator.
+2019-11-23T02:43:16.2516535-05:00;Thread#13;Error;External program returned exit code '-1'
+2019-11-23T02:43:16.2516535-05:00;Thread#13;Info;Failed generating reports
+2019-11-23T02:43:16.2596322-05:00:Total: 1 (test executions: 3)
+2019-11-23T02:43:16.2606295-05:00:Succeeded: 0
+2019-11-23T02:43:16.2616271-05:00:Ignored: 0
+2019-11-23T02:43:16.2616271-05:00:Pending: 0
+2019-11-23T02:43:16.2616271-05:00:Skipped: 0
+2019-11-23T02:43:16.2626241-05:00:Failed: 1
+2019-11-23T02:43:16.2725973-05:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+========== End of log file ==========

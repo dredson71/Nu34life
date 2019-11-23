@@ -13,9 +13,15 @@ namespace Nu34life.Controllers
         IStateService stateService = new StateService();
 
         Nu34lifeEntities ctx;
-        public StateController()
+        public StateController( )
         {
+         
             ctx = new Nu34lifeEntities();
+        }
+
+        public void changeService(IStateService stateService)
+        {
+            this.stateService = stateService;
         }
 
         [HttpPost]
@@ -78,8 +84,6 @@ namespace Nu34life.Controllers
 
             try
             {
-                using (var db = new Nu34lifeEntities())
-                {
                     var Cat = (Patient)TempData["Patient"];
                     n.setPatient_ID (Cat.Id);
                     n.setNutritionist_ID(1);
@@ -93,7 +97,7 @@ namespace Nu34life.Controllers
                     {
                         return View();
                     }
-                }
+                
             }
             catch (Exception ex)
             {

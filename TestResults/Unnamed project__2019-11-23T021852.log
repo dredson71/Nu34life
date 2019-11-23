@@ -1,0 +1,129 @@
+﻿2019-11-23T02:18:52.0062992-05:00;VSTestExecutionThread;Info;SpecFlow+Runner execution started
+2019-11-23T02:18:52.0062992-05:00;VSTestExecutionThread;Info;SpecFlow+Runner 3.1.33 in Framework clr40 in x86 mode execution started
+2019-11-23T02:18:52.0062992-05:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34life\UnitTestProject1\bin\Debug\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-11-23T02:18:52.0408850-05:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34life\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+2019-11-23T02:18:52.0408850-05:00;VSTestExecutionThread;Info;Output folder configured to "C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34life\TestResults" (default)
+2019-11-23T02:18:52.0408850-05:00;VSTestExecutionThread;Info;Profile: 
+2019-11-23T02:18:52.0618240-05:00;VSTestExecutionThread;Info;Log file path: C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34life\TestResults\Unnamed project__2019-11-23T021852.log
+2019-11-23T02:18:52.0747920-05:00;VSTestExecutionThread;Info;SpecFlow+Runner Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-11-23T02:18:52.0797486-05:00;Thread#14;Info;Checking license
+2019-11-23T02:18:52.0947851-05:00;Thread#14;Info;Evaluation mode: test execution starts in 7 seconds... (this delay is removed in the registered version)
+2019-11-23T02:18:59.0951098-05:00;Thread#14;Info;Evaluation delay finished.
+2019-11-23T02:18:59.1130693-05:00;Thread#14;Info;License check completed
+2019-11-23T02:18:59.1130693-05:00;Thread#14;Info;starting test run
+2019-11-23T02:18:59.1320104-05:00;Thread#14;Info;Discovering target: Default
+2019-11-23T02:18:59.1330062-05:00;Thread#14;Info;Discovering tests from assembly: C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34life\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+2019-11-23T02:18:59.4603905-05:00;Thread#14;Info;Discovered tests from assembly: C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34life\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+2019-11-23T02:18:59.4613611-05:00:Test Suite Dump
+2019-11-23T02:18:59.4624175-05:00:#0: Unnamed project/ - 
+2019-11-23T02:18:59.4624175-05:00:#1: Default - 
+2019-11-23T02:18:59.4624175-05:00:#2: UnitTestProject1 - 
+2019-11-23T02:18:59.4624175-05:00:#3: SpecFlowFeature1 - 
+2019-11-23T02:18:59.5381602-05:00:#4: PatientRegister - TestAssembly:UnitTestProject1/Feature:SpecFlowFeature1/Scenario:PatientRegister
+2019-11-23T02:18:59.5381602-05:00:End: Test Suite Dump
+2019-11-23T02:18:59.5661118-05:00:Thread#0:Scheduler: get next test for thread 0
+2019-11-23T02:18:59.5681046-05:00:Thread#:Scheduler: testitem #4 from normal test queue 
+2019-11-23T02:18:59.5681046-05:00:Thread#0:Scheduler: considering testitem #4 for thread 0
+2019-11-23T02:18:59.5720639-05:00:Thread#0:TestItem#4:testItemMatchesCurrentTestThread:UnSpecific
+2019-11-23T02:18:59.5720639-05:00:Thread#0:TestItem#4:runsOnOneOtherThreadSpecific:False
+2019-11-23T02:18:59.5720639-05:00:Thread#0:TestItem#4:runsOnOneOtherThreadUnspecific:False
+2019-11-23T02:18:59.5720639-05:00:Thread#0:Scheduler: using testitem #4 for thread 0
+2019-11-23T02:18:59.5740865-05:00:Thread#0:Scheduler: Test #4 is scheduled for thread
+2019-11-23T02:18:59.5750871-05:00:Thread#0:Scheduler: with testItemExecutionIndex 0
+2019-11-23T02:18:59.5780787-05:00:Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+2019-11-23T02:18:59.5800714-05:00:Thread #0: Creating test assembly executor for execution model AppDomain
+2019-11-23T02:18:59.5820371-05:00:Thread #0: Creating test assembly executor for execution model AppDomain
+2019-11-23T02:18:59.5831305-05:00:Thread #0: using TechTalk.SpecRun.Framework.Execution.InProcess.InProcAppDomainTestAssemblyExecutorHost to execute tests
+2019-11-23T02:19:00.6074094-05:00:Thread#0: Test #4/0 is started on thread #0
+2019-11-23T02:19:00.8397807-05:00:Thread#0:T:-> Loading plugin C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34life\UnitTestProject1\bin\Debug\SpecRun.Runtime.SpecFlowPlugin.dll
+2019-11-23T02:19:00.8457636-05:00:Thread#0:T:-> Using default config
+2019-11-23T02:19:00.9135824-05:00:Thread#0:B:Given The nutritionist has entered all the information about the patient
+2019-11-23T02:19:01.1745262-05:00:Thread#0:T:done: SpecFlowFeature1Steps.GivenTheNutritionistHasEnteredAllTheInformationAboutThePatient() (0.2s)
+2019-11-23T02:19:01.1753876-05:00:Thread#0:B:When He clicks on Register button
+2019-11-23T02:19:01.4522586-05:00:Thread#0:T:done: SpecFlowFeature1Steps.WhenHeClicksOnRegisterButton() (0.3s)
+2019-11-23T02:19:01.4532565-05:00:Thread#0:B:Then He should be redirected to the patient index page
+2019-11-23T02:19:01.6364050-05:00:Thread#0:T:error:   Expected string length 5 but was 6. Strings differ at index 0.
+2019-11-23T02:19:01.6413920-05:00:Thread#0:T:  Expected: "Index"
+2019-11-23T02:19:01.6423891-05:00:Thread#0:T:  But was:  "Create"
+2019-11-23T02:19:01.6423891-05:00:Thread#0:T:  -----------^
+2019-11-23T02:19:01.6513648-05:00:Thread#0:TestItem#4:Scheduler: reschedule tests for testitem #4
+2019-11-23T02:19:01.6523643-05:00:Thread#0:Scheduler: get next test for thread 0
+2019-11-23T02:19:01.6523643-05:00:Thread#:Scheduler: dequeuing a rescheduled testitem: #4
+2019-11-23T02:19:01.6523643-05:00:Thread#0:Scheduler: considering testitem #4 for thread 0
+2019-11-23T02:19:01.6523643-05:00:Thread#0:TestItem#4:testItemMatchesCurrentTestThread:UnSpecific
+2019-11-23T02:19:01.6523643-05:00:Thread#0:TestItem#4:runsOnOneOtherThreadSpecific:False
+2019-11-23T02:19:01.6523643-05:00:Thread#0:TestItem#4:runsOnOneOtherThreadUnspecific:False
+2019-11-23T02:19:01.6523643-05:00:Thread#0:Scheduler: using testitem #4 for thread 0
+2019-11-23T02:19:01.6523643-05:00:Thread#0:Scheduler: Test #4 is scheduled for thread
+2019-11-23T02:19:01.6523643-05:00:Thread#0:Scheduler: with testItemExecutionIndex 1
+2019-11-23T02:19:01.6643301-05:00:Thread#0: Test #4/0 is finished on thread #0 as Failed within 1.0559235 seconds
+2019-11-23T02:19:01.6663248-05:00:Thread#0: Test #4/1 is started on thread #0
+2019-11-23T02:19:01.6676025-05:00:Thread#0:B:Given The nutritionist has entered all the information about the patient
+2019-11-23T02:19:01.6683198-05:00:Thread#0:T:done: SpecFlowFeature1Steps.GivenTheNutritionistHasEnteredAllTheInformationAboutThePatient() (0.0s)
+2019-11-23T02:19:01.6693285-05:00:Thread#0:B:When He clicks on Register button
+2019-11-23T02:19:01.6693285-05:00:Thread#0:T:done: SpecFlowFeature1Steps.WhenHeClicksOnRegisterButton() (0.0s)
+2019-11-23T02:19:01.6706639-05:00:Thread#0:B:Then He should be redirected to the patient index page
+2019-11-23T02:19:01.6737000-05:00:Thread#0:T:error: Multiple failures or warnings in test:
+2019-11-23T02:19:01.6743038-05:00:Thread#0:T:  1)   Expected string length 5 but was 6. Strings differ at index 0.
+2019-11-23T02:19:01.6756319-05:00:Thread#0:T:  Expected: "Index"
+2019-11-23T02:19:01.6762983-05:00:Thread#0:T:  But was:  "Create"
+2019-11-23T02:19:01.6769324-05:00:Thread#0:T:  -----------^
+2019-11-23T02:19:01.6772954-05:00:Thread#0:T:  2)   Expected string length 5 but was 6. Strings differ at index 0.
+2019-11-23T02:19:01.6782927-05:00:Thread#0:T:  Expected: "Index"
+2019-11-23T02:19:01.6782927-05:00:Thread#0:T:  But was:  "Create"
+2019-11-23T02:19:01.6796256-05:00:Thread#0:T:  -----------^
+2019-11-23T02:19:01.6812849-05:00:Thread#0:Scheduler: get next test for thread 0
+2019-11-23T02:19:01.6812849-05:00:Thread#:Scheduler: dequeuing a rescheduled testitem: #4
+2019-11-23T02:19:01.6812849-05:00:Thread#0:Scheduler: considering testitem #4 for thread 0
+2019-11-23T02:19:01.6812849-05:00:Thread#0:TestItem#4:testItemMatchesCurrentTestThread:UnSpecific
+2019-11-23T02:19:01.6812849-05:00:Thread#0:TestItem#4:runsOnOneOtherThreadSpecific:False
+2019-11-23T02:19:01.6812849-05:00:Thread#0:TestItem#4:runsOnOneOtherThreadUnspecific:False
+2019-11-23T02:19:01.6812849-05:00:Thread#0:Scheduler: using testitem #4 for thread 0
+2019-11-23T02:19:01.6812849-05:00:Thread#0:Scheduler: Test #4 is scheduled for thread
+2019-11-23T02:19:01.6812849-05:00:Thread#0:Scheduler: with testItemExecutionIndex 2
+2019-11-23T02:19:01.6822819-05:00:Thread#0: Test #4/1 is finished on thread #0 as Failed within 0.0159571 seconds
+2019-11-23T02:19:01.6832864-05:00:Thread#0: Test #4/2 is started on thread #0
+2019-11-23T02:19:01.6842770-05:00:Thread#0:B:Given The nutritionist has entered all the information about the patient
+2019-11-23T02:19:01.6853420-05:00:Thread#0:T:done: SpecFlowFeature1Steps.GivenTheNutritionistHasEnteredAllTheInformationAboutThePatient() (0.0s)
+2019-11-23T02:19:01.6853420-05:00:Thread#0:B:When He clicks on Register button
+2019-11-23T02:19:01.6862717-05:00:Thread#0:T:done: SpecFlowFeature1Steps.WhenHeClicksOnRegisterButton() (0.0s)
+2019-11-23T02:19:01.6872941-05:00:Thread#0:B:Then He should be redirected to the patient index page
+2019-11-23T02:19:01.6912584-05:00:Thread#0:T:error: Multiple failures or warnings in test:
+2019-11-23T02:19:01.6916748-05:00:Thread#0:T:  1)   Expected string length 5 but was 6. Strings differ at index 0.
+2019-11-23T02:19:01.6922557-05:00:Thread#0:T:  Expected: "Index"
+2019-11-23T02:19:01.6922557-05:00:Thread#0:T:  But was:  "Create"
+2019-11-23T02:19:01.6934971-05:00:Thread#0:T:  -----------^
+2019-11-23T02:19:01.6934971-05:00:Thread#0:T:  2)   Expected string length 5 but was 6. Strings differ at index 0.
+2019-11-23T02:19:01.6943782-05:00:Thread#0:T:  Expected: "Index"
+2019-11-23T02:19:01.6943782-05:00:Thread#0:T:  But was:  "Create"
+2019-11-23T02:19:01.6952474-05:00:Thread#0:T:  -----------^
+2019-11-23T02:19:01.6960126-05:00:Thread#0:T:  3)   Expected string length 5 but was 6. Strings differ at index 0.
+2019-11-23T02:19:01.6965011-05:00:Thread#0:T:  Expected: "Index"
+2019-11-23T02:19:01.6965011-05:00:Thread#0:T:  But was:  "Create"
+2019-11-23T02:19:01.6974743-05:00:Thread#0:T:  -----------^
+2019-11-23T02:19:01.6982395-05:00:Thread#0:Scheduler: get next test for thread 0
+2019-11-23T02:19:01.6982395-05:00:Thread#:Scheduler: at the end of normal test queue
+2019-11-23T02:19:01.6982395-05:00:Thread#0:Scheduler: enumerator for thread is at end
+2019-11-23T02:19:01.6982395-05:00:Thread#0:Scheduler: No more tests for thread
+2019-11-23T02:19:01.7002336-05:00:Thread#0: Test #4/2 is finished on thread #0 as Failed within 0.0169472 seconds
+2019-11-23T02:19:01.7264014-05:00:Trying to cancel thread
+2019-11-23T02:19:01.7264014-05:00:Thread cancelled
+2019-11-23T02:19:01.7333823-05:00:Thread#-1:Scheduler: get next test for thread -1
+2019-11-23T02:19:01.7333823-05:00:Thread#:Scheduler: at the end of normal test queue
+2019-11-23T02:19:01.7333823-05:00:Thread#-1:Scheduler: enumerator for thread is at end
+2019-11-23T02:19:01.7383689-05:00;Thread#14;Info;test run finished
+2019-11-23T02:19:01.7383689-05:00;Thread#14;Info;publishing test results
+2019-11-23T02:19:01.9186554-05:00;Thread#14;Info;test results published
+2019-11-23T02:19:01.9186554-05:00;Thread#14;Info;generating reports
+2019-11-23T02:19:02.0948091-05:00;Thread#14;Info;Starting external report generation process
+2019-11-23T02:19:03.3641418-05:00;Thread#14;Error;Could not generate test run result reports. An error occurred in the generator.
+2019-11-23T02:19:03.3641418-05:00;Thread#14;Error;External program returned exit code '-1'
+2019-11-23T02:19:03.3641418-05:00;Thread#14;Info;Failed generating reports
+2019-11-23T02:19:03.3731534-05:00:Total: 1 (test executions: 3)
+2019-11-23T02:19:03.3751401-05:00:Succeeded: 0
+2019-11-23T02:19:03.3751401-05:00:Ignored: 0
+2019-11-23T02:19:03.3765326-05:00:Pending: 0
+2019-11-23T02:19:03.3765326-05:00:Skipped: 0
+2019-11-23T02:19:03.3765326-05:00:Failed: 1
+2019-11-23T02:19:03.3861296-05:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+========== End of log file ==========

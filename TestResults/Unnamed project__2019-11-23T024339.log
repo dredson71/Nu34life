@@ -1,0 +1,71 @@
+﻿2019-11-23T02:43:38.9799429-05:00;VSTestExecutionThread;Info;SpecFlow+Runner execution started
+2019-11-23T02:43:38.9799429-05:00;VSTestExecutionThread;Info;SpecFlow+Runner 3.1.33 in Framework clr40 in x86 mode execution started
+2019-11-23T02:43:38.9799429-05:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34life\UnitTestProject1\bin\Debug\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-11-23T02:43:39.0148414-05:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34life\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+2019-11-23T02:43:39.0148414-05:00;VSTestExecutionThread;Info;Output folder configured to "C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34life\TestResults" (default)
+2019-11-23T02:43:39.0148414-05:00;VSTestExecutionThread;Info;Profile: 
+2019-11-23T02:43:39.0367828-05:00;VSTestExecutionThread;Info;Log file path: C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34life\TestResults\Unnamed project__2019-11-23T024339.log
+2019-11-23T02:43:39.0487506-05:00;VSTestExecutionThread;Info;SpecFlow+Runner Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-11-23T02:43:39.0547347-05:00;Thread#13;Info;Checking license
+2019-11-23T02:43:39.0686972-05:00;Thread#13;Info;Evaluation mode: test execution starts in 10 seconds... (this delay is removed in the registered version)
+2019-11-23T02:43:49.0704863-05:00;Thread#13;Info;Evaluation delay finished.
+2019-11-23T02:43:49.0754765-05:00;Thread#13;Info;License check completed
+2019-11-23T02:43:49.0754765-05:00;Thread#13;Info;starting test run
+2019-11-23T02:43:49.0844518-05:00;Thread#13;Info;Discovering target: Default
+2019-11-23T02:43:49.0844518-05:00;Thread#13;Info;Discovering tests from assembly: C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34life\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+2019-11-23T02:43:49.3477742-05:00;Thread#13;Info;Discovered tests from assembly: C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34life\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+2019-11-23T02:43:49.3497724-05:00:Test Suite Dump
+2019-11-23T02:43:49.3507701-05:00:#0: Unnamed project/ - 
+2019-11-23T02:43:49.3507701-05:00:#1: Default - 
+2019-11-23T02:43:49.3507701-05:00:#2: UnitTestProject1 - 
+2019-11-23T02:43:49.3507701-05:00:#3: SpecFlowFeature1 - 
+2019-11-23T02:43:49.3816565-05:00:#4: PatientRegister - TestAssembly:UnitTestProject1/Feature:SpecFlowFeature1/Scenario:PatientRegister
+2019-11-23T02:43:49.3826534-05:00:End: Test Suite Dump
+2019-11-23T02:43:49.4016027-05:00:Thread#0:Scheduler: get next test for thread 0
+2019-11-23T02:43:49.4026001-05:00:Thread#:Scheduler: testitem #4 from normal test queue 
+2019-11-23T02:43:49.4026001-05:00:Thread#0:Scheduler: considering testitem #4 for thread 0
+2019-11-23T02:43:49.4065894-05:00:Thread#0:TestItem#4:testItemMatchesCurrentTestThread:UnSpecific
+2019-11-23T02:43:49.4065894-05:00:Thread#0:TestItem#4:runsOnOneOtherThreadSpecific:False
+2019-11-23T02:43:49.4065894-05:00:Thread#0:TestItem#4:runsOnOneOtherThreadUnspecific:False
+2019-11-23T02:43:49.4065894-05:00:Thread#0:Scheduler: using testitem #4 for thread 0
+2019-11-23T02:43:49.4075870-05:00:Thread#0:Scheduler: Test #4 is scheduled for thread
+2019-11-23T02:43:49.4095822-05:00:Thread#0:Scheduler: with testItemExecutionIndex 0
+2019-11-23T02:43:49.4115948-05:00:Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+2019-11-23T02:43:49.4135708-05:00:Thread #0: Creating test assembly executor for execution model AppDomain
+2019-11-23T02:43:49.4155658-05:00:Thread #0: Creating test assembly executor for execution model AppDomain
+2019-11-23T02:43:49.4165629-05:00:Thread #0: using TechTalk.SpecRun.Framework.Execution.InProcess.InProcAppDomainTestAssemblyExecutorHost to execute tests
+2019-11-23T02:43:49.4850912-05:00:Thread#0: Test #4/0 is started on thread #0
+2019-11-23T02:43:49.6945196-05:00:Thread#0:T:-> Loading plugin C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34life\UnitTestProject1\bin\Debug\SpecRun.Runtime.SpecFlowPlugin.dll
+2019-11-23T02:43:49.7004884-05:00:Thread#0:T:-> Using default config
+2019-11-23T02:43:49.7712990-05:00:Thread#0:B:Given The nutritionist has entered all the information about the patient
+2019-11-23T02:43:50.0595532-05:00:Thread#0:T:done: SpecFlowFeature1Steps.GivenTheNutritionistHasEnteredAllTheInformationAboutThePatient() (0.2s)
+2019-11-23T02:43:50.0595532-05:00:Thread#0:B:When He clicks on Register button
+2019-11-23T02:43:50.2620210-05:00:Thread#0:T:done: SpecFlowFeature1Steps.WhenHeClicksOnRegisterButton() (0.2s)
+2019-11-23T02:43:50.2630166-05:00:Thread#0:B:Then He should be redirected to the patient index page
+2019-11-23T02:43:50.2919399-05:00:Thread#0:T:done: SpecFlowFeature1Steps.ThenHeShouldBeRedirectedToThePatientIndexPage() (0.0s)
+2019-11-23T02:43:50.3049028-05:00:Thread#0:Scheduler: get next test for thread 0
+2019-11-23T02:43:50.3049028-05:00:Thread#:Scheduler: at the end of normal test queue
+2019-11-23T02:43:50.3049028-05:00:Thread#0:Scheduler: enumerator for thread is at end
+2019-11-23T02:43:50.3049028-05:00:Thread#0:Scheduler: No more tests for thread
+2019-11-23T02:43:50.3178673-05:00:Thread#0: Test #4/0 is finished on thread #0 as Succeeded within 0.8317806 seconds
+2019-11-23T02:43:50.3357887-05:00:Trying to cancel thread
+2019-11-23T02:43:50.3357887-05:00:Thread cancelled
+2019-11-23T02:43:50.3418079-05:00:Thread#-1:Scheduler: get next test for thread -1
+2019-11-23T02:43:50.3418079-05:00:Thread#:Scheduler: at the end of normal test queue
+2019-11-23T02:43:50.3418079-05:00:Thread#-1:Scheduler: enumerator for thread is at end
+2019-11-23T02:43:50.3428032-05:00;Thread#13;Info;test run finished
+2019-11-23T02:43:50.3428032-05:00;Thread#13;Info;publishing test results
+2019-11-23T02:43:50.3671038-05:00;Thread#13;Info;test results published
+2019-11-23T02:43:50.3671038-05:00;Thread#13;Info;generating reports
+2019-11-23T02:43:50.4568640-05:00;Thread#13;Info;Starting external report generation process
+2019-11-23T02:43:50.9875637-05:00;Thread#13;Error;Could not generate test run result reports. An error occurred in the generator.
+2019-11-23T02:43:50.9875637-05:00;Thread#13;Error;External program returned exit code '-1'
+2019-11-23T02:43:50.9875637-05:00;Thread#13;Info;Failed generating reports
+2019-11-23T02:43:50.9955424-05:00:Total: 1
+2019-11-23T02:43:50.9965395-05:00:Succeeded: 1
+2019-11-23T02:43:50.9975366-05:00:Ignored: 0
+2019-11-23T02:43:50.9975366-05:00:Pending: 0
+2019-11-23T02:43:50.9975366-05:00:Skipped: 0
+2019-11-23T02:43:50.9975366-05:00:Failed: 0
+2019-11-23T02:43:51.0075099-05:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+========== End of log file ==========

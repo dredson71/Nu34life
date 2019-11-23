@@ -120,6 +120,8 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="TechTalk.SpecFlow, Version=3.1.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
       <HintPath>..\packages\SpecFlow.3.1.62\lib\net45\TechTalk.SpecFlow.dll</HintPath>
     </Reference>
@@ -154,9 +156,6 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
-    <None Include="SpecFlowFeature.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Nu34life\Nu34life.csproj">

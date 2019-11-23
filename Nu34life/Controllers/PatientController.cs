@@ -13,6 +13,19 @@ namespace Nu34life.Controllers
     {
         IPatientService patientService = new PatientService();
         INutritionistService nutritionistService = new NutritionistService();
+
+
+        public PatientController()
+        {
+           
+        }
+
+        public void changeService(IPatientService patientService,
+                      INutritionistService nutritionistService)
+        {
+            this.patientService = patientService;
+            this.nutritionistService = nutritionistService;
+        }
         // GET: Recipe
         public ActionResult Index()
         {

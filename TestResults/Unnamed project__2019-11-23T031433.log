@@ -1,0 +1,123 @@
+﻿2019-11-23T03:14:33.5665818-05:00;VSTestExecutionThread;Info;SpecFlow+Runner execution started
+2019-11-23T03:14:33.5665818-05:00;VSTestExecutionThread;Info;SpecFlow+Runner 3.1.33 in Framework clr40 in x86 mode execution started
+2019-11-23T03:14:33.5665818-05:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34life\UnitTestProject1\bin\Debug\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2019-11-23T03:14:33.6004929-05:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34life\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+2019-11-23T03:14:33.6004929-05:00;VSTestExecutionThread;Info;Output folder configured to "C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34life\TestResults" (default)
+2019-11-23T03:14:33.6004929-05:00;VSTestExecutionThread;Info;Profile: 
+2019-11-23T03:14:33.6214408-05:00;VSTestExecutionThread;Info;Log file path: C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34life\TestResults\Unnamed project__2019-11-23T031433.log
+2019-11-23T03:14:33.6343719-05:00;VSTestExecutionThread;Info;SpecFlow+Runner Evaluation Mode: Please purchase at http://www.specflow.org/plus to remove test execution delay.
+2019-11-23T03:14:33.6393583-05:00;Thread#13;Info;Checking license
+2019-11-23T03:14:33.6533335-05:00;Thread#13;Info;Evaluation mode: test execution starts in 8 seconds... (this delay is removed in the registered version)
+2019-11-23T03:14:41.6545255-05:00;Thread#13;Info;Evaluation delay finished.
+2019-11-23T03:14:41.6595179-05:00;Thread#13;Info;License check completed
+2019-11-23T03:14:41.6595179-05:00;Thread#13;Info;starting test run
+2019-11-23T03:14:41.6675227-05:00;Thread#13;Info;Discovering target: Default
+2019-11-23T03:14:41.6675227-05:00;Thread#13;Info;Discovering tests from assembly: C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34life\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+2019-11-23T03:14:41.9303899-05:00;Thread#13;Info;Discovered tests from assembly: C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34life\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+2019-11-23T03:14:41.9313612-05:00:Test Suite Dump
+2019-11-23T03:14:41.9323871-05:00:#0: Unnamed project/ - 
+2019-11-23T03:14:41.9323871-05:00:#1: Default - 
+2019-11-23T03:14:41.9323871-05:00:#2: UnitTestProject1 - 
+2019-11-23T03:14:41.9323871-05:00:#5: StateCreate - 
+2019-11-23T03:14:41.9643017-05:00:#6: CreateState - TestAssembly:UnitTestProject1/Feature:StateCreate/Scenario:CreateState
+2019-11-23T03:14:41.9643017-05:00:End: Test Suite Dump
+2019-11-23T03:14:41.9842441-05:00:Thread#0:Scheduler: get next test for thread 0
+2019-11-23T03:14:41.9862381-05:00:Thread#:Scheduler: testitem #6 from normal test queue 
+2019-11-23T03:14:41.9862381-05:00:Thread#0:Scheduler: considering testitem #6 for thread 0
+2019-11-23T03:14:41.9892304-05:00:Thread#0:TestItem#6:testItemMatchesCurrentTestThread:UnSpecific
+2019-11-23T03:14:41.9892304-05:00:Thread#0:TestItem#6:runsOnOneOtherThreadSpecific:False
+2019-11-23T03:14:41.9892304-05:00:Thread#0:TestItem#6:runsOnOneOtherThreadUnspecific:False
+2019-11-23T03:14:41.9892304-05:00:Thread#0:Scheduler: using testitem #6 for thread 0
+2019-11-23T03:14:41.9912250-05:00:Thread#0:Scheduler: Test #6 is scheduled for thread
+2019-11-23T03:14:41.9921972-05:00:Thread#0:Scheduler: with testItemExecutionIndex 0
+2019-11-23T03:14:41.9951890-05:00:Thread #0: creating new test thread executor for UnitTestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+2019-11-23T03:14:41.9972103-05:00:Thread #0: Creating test assembly executor for execution model AppDomain
+2019-11-23T03:14:41.9992046-05:00:Thread #0: Creating test assembly executor for execution model AppDomain
+2019-11-23T03:14:42.0002022-05:00:Thread #0: using TechTalk.SpecRun.Framework.Execution.InProcess.InProcAppDomainTestAssemblyExecutorHost to execute tests
+2019-11-23T03:14:42.0689911-05:00:Thread#0: Test #6/0 is started on thread #0
+2019-11-23T03:14:42.2742312-05:00:Thread#0:T:-> Loading plugin C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34life\UnitTestProject1\bin\Debug\SpecRun.Runtime.SpecFlowPlugin.dll
+2019-11-23T03:14:42.2802431-05:00:Thread#0:T:-> Using default config
+2019-11-23T03:14:42.3530494-05:00:Thread#0:B:Given I have specified patient selected
+2019-11-23T03:14:42.5126279-05:00:Thread#0:T:done: StateCreateSteps.GivenIHaveSpecifiedPatientSelected() (0.1s)
+2019-11-23T03:14:42.5135923-05:00:Thread#0:B:And I register all the information needed
+2019-11-23T03:14:42.8636586-05:00:Thread#0:T:done: StateCreateSteps.GivenIRegisterAllTheInformationNeeded() (0.3s)
+2019-11-23T03:14:42.8646524-05:00:Thread#0:B:When I press create state
+2019-11-23T03:14:42.8786159-05:00:Thread#0:T:done: StateCreateSteps.WhenIPressCreateState() (0.0s)
+2019-11-23T03:14:42.8796125-05:00:Thread#0:B:Then It should be redirected to the state index page
+2019-11-23T03:14:43.0152490-05:00:Thread#0:T:error:   Expected: instance of <System.Web.Mvc.RedirectToRouteResult>
+2019-11-23T03:14:43.0202356-05:00:Thread#0:T:  But was:  <System.Web.Mvc.ViewResult>
+2019-11-23T03:14:43.0292116-05:00:Thread#0:TestItem#6:Scheduler: reschedule tests for testitem #6
+2019-11-23T03:14:43.0302090-05:00:Thread#0:Scheduler: get next test for thread 0
+2019-11-23T03:14:43.0302090-05:00:Thread#:Scheduler: dequeuing a rescheduled testitem: #6
+2019-11-23T03:14:43.0302090-05:00:Thread#0:Scheduler: considering testitem #6 for thread 0
+2019-11-23T03:14:43.0302090-05:00:Thread#0:TestItem#6:testItemMatchesCurrentTestThread:UnSpecific
+2019-11-23T03:14:43.0302090-05:00:Thread#0:TestItem#6:runsOnOneOtherThreadSpecific:False
+2019-11-23T03:14:43.0302090-05:00:Thread#0:TestItem#6:runsOnOneOtherThreadUnspecific:False
+2019-11-23T03:14:43.0302090-05:00:Thread#0:Scheduler: using testitem #6 for thread 0
+2019-11-23T03:14:43.0302090-05:00:Thread#0:Scheduler: Test #6 is scheduled for thread
+2019-11-23T03:14:43.0302090-05:00:Thread#0:Scheduler: with testItemExecutionIndex 1
+2019-11-23T03:14:43.0431745-05:00:Thread#0: Test #6/0 is finished on thread #0 as Failed within 0.973186 seconds
+2019-11-23T03:14:43.0461673-05:00:Thread#0: Test #6/1 is started on thread #0
+2019-11-23T03:14:43.0471646-05:00:Thread#0:B:Given I have specified patient selected
+2019-11-23T03:14:43.0481619-05:00:Thread#0:T:done: StateCreateSteps.GivenIHaveSpecifiedPatientSelected() (0.0s)
+2019-11-23T03:14:43.0481619-05:00:Thread#0:B:And I register all the information needed
+2019-11-23T03:14:43.0501569-05:00:Thread#0:T:done: StateCreateSteps.GivenIRegisterAllTheInformationNeeded() (0.0s)
+2019-11-23T03:14:43.0511532-05:00:Thread#0:B:When I press create state
+2019-11-23T03:14:43.0521505-05:00:Thread#0:T:done: StateCreateSteps.WhenIPressCreateState() (0.0s)
+2019-11-23T03:14:43.0531476-05:00:Thread#0:B:Then It should be redirected to the state index page
+2019-11-23T03:14:43.0571383-05:00:Thread#0:T:error: Multiple failures or warnings in test:
+2019-11-23T03:14:43.0581343-05:00:Thread#0:T:  1)   Expected: instance of <System.Web.Mvc.RedirectToRouteResult>
+2019-11-23T03:14:43.0591316-05:00:Thread#0:T:  But was:  <System.Web.Mvc.ViewResult>
+2019-11-23T03:14:43.0591316-05:00:Thread#0:T:  2)   Expected: instance of <System.Web.Mvc.RedirectToRouteResult>
+2019-11-23T03:14:43.0601289-05:00:Thread#0:T:  But was:  <System.Web.Mvc.ViewResult>
+2019-11-23T03:14:43.0621237-05:00:Thread#0:Scheduler: get next test for thread 0
+2019-11-23T03:14:43.0621237-05:00:Thread#:Scheduler: dequeuing a rescheduled testitem: #6
+2019-11-23T03:14:43.0621237-05:00:Thread#0:Scheduler: considering testitem #6 for thread 0
+2019-11-23T03:14:43.0621237-05:00:Thread#0:TestItem#6:testItemMatchesCurrentTestThread:UnSpecific
+2019-11-23T03:14:43.0621237-05:00:Thread#0:TestItem#6:runsOnOneOtherThreadSpecific:False
+2019-11-23T03:14:43.0621237-05:00:Thread#0:TestItem#6:runsOnOneOtherThreadUnspecific:False
+2019-11-23T03:14:43.0621237-05:00:Thread#0:Scheduler: using testitem #6 for thread 0
+2019-11-23T03:14:43.0621237-05:00:Thread#0:Scheduler: Test #6 is scheduled for thread
+2019-11-23T03:14:43.0621237-05:00:Thread#0:Scheduler: with testItemExecutionIndex 2
+2019-11-23T03:14:43.0631211-05:00:Thread#0: Test #6/1 is finished on thread #0 as Failed within 0.0169538 seconds
+2019-11-23T03:14:43.0631211-05:00:Thread#0: Test #6/2 is started on thread #0
+2019-11-23T03:14:43.0641283-05:00:Thread#0:B:Given I have specified patient selected
+2019-11-23T03:14:43.0651162-05:00:Thread#0:T:done: StateCreateSteps.GivenIHaveSpecifiedPatientSelected() (0.0s)
+2019-11-23T03:14:43.0661133-05:00:Thread#0:B:And I register all the information needed
+2019-11-23T03:14:43.0671103-05:00:Thread#0:T:done: StateCreateSteps.GivenIRegisterAllTheInformationNeeded() (0.0s)
+2019-11-23T03:14:43.0681077-05:00:Thread#0:B:When I press create state
+2019-11-23T03:14:43.0681077-05:00:Thread#0:T:done: StateCreateSteps.WhenIPressCreateState() (0.0s)
+2019-11-23T03:14:43.0710995-05:00:Thread#0:B:Then It should be redirected to the state index page
+2019-11-23T03:14:43.0730946-05:00:Thread#0:T:error: Multiple failures or warnings in test:
+2019-11-23T03:14:43.0730946-05:00:Thread#0:T:  1)   Expected: instance of <System.Web.Mvc.RedirectToRouteResult>
+2019-11-23T03:14:43.0740918-05:00:Thread#0:T:  But was:  <System.Web.Mvc.ViewResult>
+2019-11-23T03:14:43.0751008-05:00:Thread#0:T:  2)   Expected: instance of <System.Web.Mvc.RedirectToRouteResult>
+2019-11-23T03:14:43.0751008-05:00:Thread#0:T:  But was:  <System.Web.Mvc.ViewResult>
+2019-11-23T03:14:43.0760863-05:00:Thread#0:T:  3)   Expected: instance of <System.Web.Mvc.RedirectToRouteResult>
+2019-11-23T03:14:43.0760863-05:00:Thread#0:T:  But was:  <System.Web.Mvc.ViewResult>
+2019-11-23T03:14:43.0780809-05:00:Thread#0:Scheduler: get next test for thread 0
+2019-11-23T03:14:43.0780809-05:00:Thread#:Scheduler: at the end of normal test queue
+2019-11-23T03:14:43.0780809-05:00:Thread#0:Scheduler: enumerator for thread is at end
+2019-11-23T03:14:43.0780809-05:00:Thread#0:Scheduler: No more tests for thread
+2019-11-23T03:14:43.0790786-05:00:Thread#0: Test #6/2 is finished on thread #0 as Failed within 0.0159575 seconds
+2019-11-23T03:14:43.1000222-05:00:Trying to cancel thread
+2019-11-23T03:14:43.1000222-05:00:Thread cancelled
+2019-11-23T03:14:43.1060062-05:00:Thread#-1:Scheduler: get next test for thread -1
+2019-11-23T03:14:43.1060062-05:00:Thread#:Scheduler: at the end of normal test queue
+2019-11-23T03:14:43.1060062-05:00:Thread#-1:Scheduler: enumerator for thread is at end
+2019-11-23T03:14:43.1110085-05:00;Thread#13;Info;test run finished
+2019-11-23T03:14:43.1110085-05:00;Thread#13;Info;publishing test results
+2019-11-23T03:14:43.1379249-05:00;Thread#13;Info;test results published
+2019-11-23T03:14:43.1379249-05:00;Thread#13;Info;generating reports
+2019-11-23T03:14:43.2441674-05:00;Thread#13;Info;Starting external report generation process
+2019-11-23T03:14:43.8046676-05:00;Thread#13;Error;Could not generate test run result reports. An error occurred in the generator.
+2019-11-23T03:14:43.8046676-05:00;Thread#13;Error;External program returned exit code '-1'
+2019-11-23T03:14:43.8046676-05:00;Thread#13;Info;Failed generating reports
+2019-11-23T03:14:43.8126497-05:00:Total: 1 (test executions: 3)
+2019-11-23T03:14:43.8146407-05:00:Succeeded: 0
+2019-11-23T03:14:43.8146407-05:00:Ignored: 0
+2019-11-23T03:14:43.8156381-05:00:Pending: 0
+2019-11-23T03:14:43.8156381-05:00:Skipped: 0
+2019-11-23T03:14:43.8156381-05:00:Failed: 1
+2019-11-23T03:14:43.8246140-05:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+========== End of log file ==========
