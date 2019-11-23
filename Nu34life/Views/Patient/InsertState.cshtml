@@ -2,6 +2,10 @@
 
 @{
     ViewBag.Title = "InsertState";
+    if (Session["Email"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
 }
 
 <h2>Buscar estado por Paciente:</h2>

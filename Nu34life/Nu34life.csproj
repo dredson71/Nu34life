@@ -215,6 +215,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IngredientController.cs" />
     <Compile Include="Controllers\InstructionController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MembershipController.cs" />
     <Compile Include="Controllers\NutritionistController.cs" />
     <Compile Include="Controllers\PatientController.cs" />
@@ -424,6 +425,7 @@
     <Content Include="Views\Plan\Create.cshtml" />
     <Content Include="Views\Plan\ListaRecipe.cshtml" />
     <Content Include="Views\Plan\CreatePlan_Recipe.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

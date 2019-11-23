@@ -1,0 +1,52 @@
+﻿@model Nu34life.Models.Nutritionist
+
+@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width-device-width"/>
+    <title>Index</title>
+    <style>
+
+        </style>
+</head>
+<body>
+    <div id="login-div">
+        @using (Html.BeginForm("Authorize","Login", FormMethod.Post))
+        {
+        <table>
+            <tr>
+                <td></td>
+                <td style="text-decoration:underline">App Name</td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.Email)
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.Email)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.Password)
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.Password)
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input id="btn_IniciarSesion" type="submit" name="name" value="Login" />
+                    <input type="reset" name="name" value="Clear" />
+                </td>
+            </tr>
+
+        </table>
+        }
+    </div>
+</body>
+</html> 

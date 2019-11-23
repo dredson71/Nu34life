@@ -1,5 +1,5 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,12 +9,12 @@ using System.Linq;
 
 namespace Nu34lifeTest
 {
-    public class AutomatedUITests : IDisposable
+    public class AutomatedUITestFirefox : IDisposable
     {
         private readonly IWebDriver _driver;
-        public AutomatedUITests()
+        public AutomatedUITestFirefox()
         {
-            _driver = new ChromeDriver();
+            _driver = new FirefoxDriver();
             _driver.Manage().Window.Maximize();
         }
 
@@ -184,7 +184,7 @@ namespace Nu34lifeTest
             var a = _driver.FindElement(By.Name("Id"));
             var selectElement = new SelectElement(a);
             selectElement.SelectByIndex(4);
-            
+
 
             _driver.FindElement(By.Id("btn_GoPatient"))
                 .Click();

@@ -187,3 +187,4 @@ C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34lifeTest\bin\Debug\xunit.run
 C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34lifeTest\bin\Debug\xunit.runner.utility.net452.dll
 C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34lifeTest\bin\Debug\WebDriver.Support.dll
 C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34lifeTest\bin\Debug\WebDriver.Support.xml
+C:\Users\diego\Desktop\Nu34life-master\Nu34life\Nu34lifeTest\bin\Debug\geckodriver.exe
